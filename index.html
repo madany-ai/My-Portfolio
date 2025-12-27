@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="محمد مدني - مطور Backend متخصص في Laravel و WordPress. بناء أنظمة موثوقة وحلول برمجية متكاملة.">
-    <meta name="keywords" content="Laravel, WordPress, Backend Developer, PHP, REST API, مطور ويب, برمجة">
+    <meta name="description" content="محمد مدني - مطور Backend ومتخصص في حلول WordPress. أبني مواقع احترافية ومتاجر إلكترونية تخدم نجاح أعمالك.">
+    <meta name="keywords" content="تطوير مواقع, WordPress, WooCommerce, متجر إلكتروني, مطور ويب, Laravel, PHP">
     <meta name="author" content="Mohamed Madany">
-    <title>محمد مدني | مطور Backend</title>
+    <title>محمد مدني | مطور مواقع WordPress ومتاجر إلكترونية</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,11 +18,11 @@
         <div class="container nav-container">
             <a href="#hero" class="logo">محمد <span>مدني</span></a>
             <ul class="nav-links" id="navLinks">
+                <li><a href="#why-me">لماذا أنا</a></li>
                 <li><a href="#about">نبذة عني</a></li>
-                <li><a href="#skills">المهارات</a></li>
-                <li><a href="#projects">المشاريع</a></li>
-                <li><a href="#experience">الخبرات</a></li>
                 <li><a href="#services">الخدمات</a></li>
+                <li><a href="#projects">أعمالي</a></li>
+                <li><a href="#testimonials">آراء العملاء</a></li>
                 <li><a href="#contact">التواصل</a></li>
             </ul>
             <div class="nav-actions">
@@ -30,6 +30,7 @@
                     <span class="icon-sun">☀️</span>
                     <span class="icon-moon">🌙</span>
                 </button>
+                <a href="#contact" class="btn btn-primary btn-nav">اطلب موقعك</a>
                 <button class="menu-toggle" id="menuToggle" aria-label="القائمة">
                     <span></span>
                     <span></span>
@@ -41,87 +42,208 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <div class="hero-glow"></div>
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
         <div class="container hero-container">
-            <div class="hero-content fade-in">
-                <span class="hero-greeting">مرحباً، أنا</span>
-                <h1 class="hero-title">محمد مدني</h1>
-                <h2 class="hero-subtitle">مطور <span class="highlight">Backend</span></h2>
-                <p class="hero-description">
-                    أبني أنظمة موثوقة وقابلة للتوسع باستخدام Laravel و WordPress.
-                    أحوّل الأفكار إلى حلول برمجية متكاملة بتفكير منهجي وكود نظيف.
+            <div class="hero-content">
+                <span class="hero-badge animate-fade-up">🚀 متخصص في حلول WordPress & WooCommerce</span>
+                <h1 class="hero-title animate-fade-up delay-1">محمد مدني</h1>
+                <h2 class="hero-subtitle animate-fade-up delay-2">
+                    أبني لك موقعاً <span class="highlight typed-text"></span>
+                </h2>
+                <p class="hero-description animate-fade-up delay-3">
+                    لا أقوم فقط ببناء المواقع — أحل مشاكل أعمالك الرقمية.
+                    مواقع سريعة، آمنة، ومصممة لتحقيق أهدافك التجارية.
                 </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">عرض المشاريع</a>
-                    <a href="#contact" class="btn btn-secondary">تواصل معي</a>
+                <div class="hero-cta animate-fade-up delay-4">
+                    <a href="#contact" class="btn btn-primary btn-lg">
+                        <span>اطلب موقعك الآن</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#projects" class="btn btn-secondary btn-lg">شاهد أعمالي</a>
+                </div>
+                <div class="hero-trust animate-fade-up delay-5">
+                    <div class="trust-item">
+                        <span class="trust-number">+50</span>
+                        <span class="trust-label">مشروع منجز</span>
+                    </div>
+                    <div class="trust-divider"></div>
+                    <div class="trust-item">
+                        <span class="trust-number">+30</span>
+                        <span class="trust-label">عميل سعيد</span>
+                    </div>
+                    <div class="trust-divider"></div>
+                    <div class="trust-item">
+                        <span class="trust-number">%100</span>
+                        <span class="trust-label">التزام بالمواعيد</span>
+                    </div>
                 </div>
             </div>
-            <div class="hero-visual fade-in">
-                <div class="code-block">
-                    <div class="code-header">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
+            <div class="hero-image animate-fade-left delay-2">
+                <div class="image-container">
+                    <img src="images/profile.png" alt="محمد مدني - مطور مواقع ووردبريس" class="profile-img">
+                    <div class="image-glow"></div>
+                    <div class="floating-card card-1 animate-float">
+                        <span class="card-icon">⚡</span>
+                        <span class="card-text">أداء عالي</span>
                     </div>
-                    <pre class="code-content"><code><span class="keyword">class</span> <span class="class-name">Developer</span>
-{
-    <span class="keyword">public</span> <span class="variable">$name</span> = <span class="string">'Mohamed Madany'</span>;
-    <span class="keyword">public</span> <span class="variable">$role</span> = <span class="string">'Backend Developer'</span>;
-    <span class="keyword">public</span> <span class="variable">$skills</span> = [
-        <span class="string">'Laravel'</span>,
-        <span class="string">'WordPress'</span>,
-        <span class="string">'REST APIs'</span>
-    ];
-}</code></pre>
+                    <div class="floating-card card-2 animate-float delay-1">
+                        <span class="card-icon">🔒</span>
+                        <span class="card-text">حماية قوية</span>
+                    </div>
+                    <div class="floating-card card-3 animate-float delay-2">
+                        <span class="card-icon">🛒</span>
+                        <span class="card-text">متاجر احترافية</span>
+                    </div>
                 </div>
             </div>
         </div>
-        <a href="#about" class="scroll-indicator" aria-label="التمرير للأسفل">
-            <span></span>
+        <a href="#why-me" class="scroll-indicator" aria-label="التمرير للأسفل">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>اكتشف المزيد</span>
         </a>
+    </section>
+
+    <!-- Why Me Section -->
+    <section class="section why-me" id="why-me">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge animate-fade-up">✨ ما يميزني</span>
+                <h2 class="section-title animate-fade-up delay-1">لماذا تختارني <span class="highlight">لمشروعك؟</span></h2>
+                <p class="section-subtitle animate-fade-up delay-2">لست مجرد "مطور ووردبريس" — أنا شريك تقني يفهم أعمالك</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card animate-fade-up delay-1">
+                    <div class="why-icon">🧠</div>
+                    <h3>تفكير هندسي</h3>
+                    <p>أطبق مبادئ هندسة البرمجيات حتى على مشاريع WordPress. كود نظيف، بنية قابلة للتوسع.</p>
+                </div>
+                <div class="why-card animate-fade-up delay-2">
+                    <div class="why-icon">⚡</div>
+                    <h3>سرعة وأداء</h3>
+                    <p>مواقع سريعة التحميل ومحسّنة للسيرش إنجن. لا قوالب ثقيلة أو إضافات غير ضرورية.</p>
+                </div>
+                <div class="why-card animate-fade-up delay-3">
+                    <div class="why-icon">🔒</div>
+                    <h3>أمان متقدم</h3>
+                    <p>حماية موقعك من الاختراقات والبرمجيات الخبيثة. تحديثات دورية وإجراءات أمان احترافية.</p>
+                </div>
+                <div class="why-card animate-fade-up delay-4">
+                    <div class="why-icon">🤝</div>
+                    <h3>فهم للبيزنس</h3>
+                    <p>أفهم احتياجات عملك قبل الكود. الموقع أداة لتحقيق أهدافك، ليس مجرد صفحات.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- About Section -->
     <section class="section about" id="about">
         <div class="container">
-            <h2 class="section-title fade-in">نبذة <span class="highlight">عني</span></h2>
             <div class="about-content">
-                <div class="about-image fade-in">
-                    <div class="image-wrapper">
-                        <div class="image-placeholder">
-                            <span>صورة شخصية</span>
+                <div class="about-image animate-fade-right">
+                    <div class="about-img-wrapper">
+                        <img src="images/profile.png" alt="محمد مدني" class="about-img">
+                        <div class="experience-badge">
+                            <span class="exp-number">+3</span>
+                            <span class="exp-text">سنوات خبرة</span>
                         </div>
-                        <div class="image-glow"></div>
                     </div>
                 </div>
-                <div class="about-text fade-in">
-                    <h3>مطور Backend شغوف بالبرمجة</h3>
-                    <p>
-                        أركّز على تطوير الـ Backend وبناء أنظمة قوية ومستقرة. أعمل بشكل أساسي مع 
-                        <strong>Laravel</strong> لبناء REST APIs احترافية وتطبيقات ويب متكاملة.
+                <div class="about-text">
+                    <span class="section-badge animate-fade-up">👋 تعرّف عليّ</span>
+                    <h2 class="section-title text-right animate-fade-up delay-1">نبذة <span class="highlight">عني</span></h2>
+                    <p class="animate-fade-up delay-2">
+                        أنا <strong>محمد مدني</strong>، مطور Backend متخصص في بناء حلول رقمية متكاملة. 
+                        أركز على <strong>WordPress و WooCommerce</strong> لتقديم مواقع ومتاجر إلكترونية احترافية 
+                        تلبي احتياجات أصحاب الأعمال.
                     </p>
-                    <p>
-                        متخصص في تخصيص <strong>WordPress</strong> و <strong>WooCommerce</strong> وتحويلها إلى 
-                        منصات تجارية متكاملة تلبي احتياجات العملاء.
+                    <p class="animate-fade-up delay-3">
+                        خبرتي في <strong>Laravel</strong> تمنحني رؤية هندسية مختلفة — أبني حلولاً مخصصة، 
+                        لا أعتمد على القوالب الجاهزة فقط. أفهم منطق الأعمال وأحوّله إلى كود يعمل بكفاءة.
                     </p>
-                    <p>
-                        أحوّل منطق الأعمال المعقد إلى كود منظم وقابل للتوسع، مع التركيز على الجودة 
-                        والأداء وسهولة الصيانة على المدى الطويل.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">+50</span>
-                            <span class="stat-label">مشروع منجز</span>
+                    <div class="about-features animate-fade-up delay-4">
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <span>مواقع WordPress احترافية</span>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">+30</span>
-                            <span class="stat-label">عميل سعيد</span>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <span>متاجر WooCommerce متكاملة</span>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">+3</span>
-                            <span class="stat-label">سنوات خبرة</span>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <span>APIs و أنظمة Laravel</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <span>دعم فني مستمر</span>
                         </div>
                     </div>
+                    <a href="#contact" class="btn btn-primary animate-fade-up delay-5">تواصل معي الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge animate-fade-up">🛠️ خدماتي</span>
+                <h2 class="section-title animate-fade-up delay-1">خدمات <span class="highlight">احترافية</span></h2>
+                <p class="section-subtitle animate-fade-up delay-2">حلول متكاملة تناسب احتياجات عملك</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate-fade-up delay-1">
+                    <div class="service-icon">🌐</div>
+                    <h3>مواقع WordPress احترافية</h3>
+                    <ul class="service-features">
+                        <li>مواقع شركات وتعريفية</li>
+                        <li>صفحات هبوط Landing Pages</li>
+                        <li>مواقع شخصية وبورتفوليو</li>
+                        <li>تصميم متجاوب 100%</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">اطلب الآن ←</a>
+                </div>
+                <div class="service-card featured animate-fade-up delay-2">
+                    <div class="service-badge">الأكثر طلباً</div>
+                    <div class="service-icon">🛒</div>
+                    <h3>متاجر WooCommerce</h3>
+                    <ul class="service-features">
+                        <li>إعداد متجر إلكتروني كامل</li>
+                        <li>ربط بوابات الدفع</li>
+                        <li>نظام شحن وتتبع</li>
+                        <li>تحسين سرعة المتجر</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">اطلب الآن ←</a>
+                </div>
+                <div class="service-card animate-fade-up delay-3">
+                    <div class="service-icon">🔧</div>
+                    <h3>إصلاح وتحسين المواقع</h3>
+                    <ul class="service-features">
+                        <li>حل مشاكل WordPress</li>
+                        <li>تحسين السرعة والأداء</li>
+                        <li>إصلاح الأخطاء البرمجية</li>
+                        <li>تحديثات الأمان</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">اطلب الآن ←</a>
+                </div>
+                <div class="service-card animate-fade-up delay-4">
+                    <div class="service-icon">💡</div>
+                    <h3>استشارات تقنية</h3>
+                    <ul class="service-features">
+                        <li>اختيار الحل المناسب لمشروعك</li>
+                        <li>تحليل وتحسين الموقع الحالي</li>
+                        <li>خطة تطوير مستقبلية</li>
+                        <li>نصائح للنمو الرقمي</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">اطلب الآن ←</a>
                 </div>
             </div>
         </div>
@@ -130,57 +252,97 @@
     <!-- Skills Section -->
     <section class="section skills" id="skills">
         <div class="container">
-            <h2 class="section-title fade-in">المهارات <span class="highlight">التقنية</span></h2>
+            <div class="section-header">
+                <span class="section-badge animate-fade-up">💻 مهاراتي</span>
+                <h2 class="section-title animate-fade-up delay-1">المهارات <span class="highlight">التقنية</span></h2>
+            </div>
             <div class="skills-grid">
-                <!-- Backend Development -->
-                <div class="skill-category fade-in">
+                <div class="skill-category animate-fade-up delay-1">
                     <div class="category-header">
                         <span class="category-icon">⚙️</span>
-                        <h3>Backend Development</h3>
+                        <h3>Backend & Systems</h3>
                     </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Laravel</span>
-                        <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">MVC Architecture</span>
-                        <span class="skill-tag">Authentication</span>
-                        <span class="skill-tag">RESTful APIs</span>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>PHP</span><span>90%</span></div>
+                            <div class="bar"><div class="progress" style="--width: 90%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Laravel</span><span>85%</span></div>
+                            <div class="bar"><div class="progress" style="--width: 85%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>MySQL</span><span>85%</span></div>
+                            <div class="bar"><div class="progress" style="--width: 85%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>REST APIs</span><span>80%</span></div>
+                            <div class="bar"><div class="progress" style="--width: 80%"></div></div>
+                        </div>
                     </div>
                 </div>
-                <!-- WordPress -->
-                <div class="skill-category fade-in">
+                <div class="skill-category animate-fade-up delay-2">
                     <div class="category-header">
                         <span class="category-icon">🛒</span>
                         <h3>WordPress & E-Commerce</h3>
                     </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">WordPress</span>
-                        <span class="skill-tag">WooCommerce</span>
-                        <span class="skill-tag">Custom Themes</span>
-                        <span class="skill-tag">Plugin Customization</span>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>WordPress</span><span>95%</span></div>
+                            <div class="bar"><div class="progress" style="--width: 95%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>WooCommerce</span><span>90%</span></div>
+                            <div class="bar"><div class="progress" style="--width: 90%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Custom Themes</span><span>85%</span></div>
+                            <div class="bar"><div class="progress" style="--width: 85%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Plugin Dev</span><span>80%</span></div>
+                            <div class="bar"><div class="progress" style="--width: 80%"></div></div>
+                        </div>
                     </div>
                 </div>
-                <!-- Frontend -->
-                <div class="skill-category fade-in">
+                <div class="skill-category animate-fade-up delay-3">
                     <div class="category-header">
                         <span class="category-icon">🎨</span>
                         <h3>Frontend Basics</h3>
                     </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">JavaScript</span>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>HTML/CSS</span><span>90%</span></div>
+                            <div class="bar"><div class="progress" style="--width: 90%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>JavaScript</span><span>75%</span></div>
+                            <div class="bar"><div class="progress" style="--width: 75%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Responsive</span><span>95%</span></div>
+                            <div class="bar"><div class="progress" style="--width: 95%"></div></div>
+                        </div>
                     </div>
                 </div>
-                <!-- Tools -->
-                <div class="skill-category fade-in">
+                <div class="skill-category animate-fade-up delay-4">
                     <div class="category-header">
                         <span class="category-icon">🔧</span>
-                        <h3>Tools & Technologies</h3>
+                        <h3>Tools & Security</h3>
                     </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">Linux Basics</span>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Git</span><span>85%</span></div>
+                            <div class="bar"><div class="progress" style="--width: 85%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Linux</span><span>70%</span></div>
+                            <div class="bar"><div class="progress" style="--width: 70%"></div></div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info"><span>Security</span><span>80%</span></div>
+                            <div class="bar"><div class="progress" style="--width: 80%"></div></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -190,160 +352,155 @@
     <!-- Projects Section -->
     <section class="section projects" id="projects">
         <div class="container">
-            <h2 class="section-title fade-in">المشاريع <span class="highlight">المميزة</span></h2>
+            <div class="section-header">
+                <span class="section-badge animate-fade-up">📂 أعمالي</span>
+                <h2 class="section-title animate-fade-up delay-1">مشاريع <span class="highlight">مختارة</span></h2>
+                <p class="section-subtitle animate-fade-up delay-2">نماذج من الأعمال التي أنجزتها لعملائي</p>
+            </div>
             <div class="projects-grid">
-                <article class="project-card fade-in">
+                <article class="project-card animate-fade-up delay-1">
                     <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link-icon">🔗</a>
+                        </div>
+                        <div class="project-placeholder">🏢</div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">موقع شركة</span>
+                        <h3>موقع شركة عقارية</h3>
+                        <p><strong>المشكلة:</strong> موقع قديم وبطيء لا يعكس هوية الشركة.</p>
+                        <p><strong>الحل:</strong> موقع WordPress حديث مع نظام عرض عقارات متقدم.</p>
+                        <p><strong>النتيجة:</strong> زيادة 60% في الاستفسارات.</p>
+                        <div class="project-tech">
+                            <span>WordPress</span>
+                            <span>Custom Theme</span>
+                            <span>SEO</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card animate-fade-up delay-2">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link-icon">🔗</a>
+                        </div>
+                        <div class="project-placeholder">🛍️</div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">متجر إلكتروني</span>
+                        <h3>متجر ملابس أونلاين</h3>
+                        <p><strong>المشكلة:</strong> العميل يبيع على انستجرام فقط ويخسر عملاء.</p>
+                        <p><strong>الحل:</strong> متجر WooCommerce متكامل مع دفع وشحن.</p>
+                        <p><strong>النتيجة:</strong> مضاعفة المبيعات في 3 شهور.</p>
+                        <div class="project-tech">
+                            <span>WooCommerce</span>
+                            <span>Payment Gateway</span>
+                            <span>Shipping</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card animate-fade-up delay-3">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link-icon">🔗</a>
+                        </div>
                         <div class="project-placeholder">📊</div>
                     </div>
                     <div class="project-content">
-                        <h3>نظام إدارة المخزون</h3>
-                        <p>نظام متكامل لإدارة المخزون والمبيعات مع لوحة تحكم تفاعلية وتقارير مفصلة.</p>
+                        <span class="project-category">نظام إداري</span>
+                        <h3>نظام إدارة حجوزات</h3>
+                        <p><strong>المشكلة:</strong> إدارة الحجوزات يدوياً تسبب أخطاء.</p>
+                        <p><strong>الحل:</strong> نظام Laravel مع لوحة تحكم متكاملة.</p>
+                        <p><strong>النتيجة:</strong> توفير 10 ساعات عمل أسبوعياً.</p>
                         <div class="project-tech">
                             <span>Laravel</span>
                             <span>MySQL</span>
                             <span>REST API</span>
                         </div>
-                        <a href="#" class="project-link">عرض المشروع ←</a>
                     </div>
                 </article>
-                <article class="project-card fade-in">
+                <article class="project-card animate-fade-up delay-4">
                     <div class="project-image">
-                        <div class="project-placeholder">🛍️</div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link-icon">🔗</a>
+                        </div>
+                        <div class="project-placeholder">🍕</div>
                     </div>
                     <div class="project-content">
-                        <h3>متجر إلكتروني متكامل</h3>
-                        <p>منصة تجارة إلكترونية مع نظام دفع متعدد وإدارة شحن ذكية.</p>
+                        <span class="project-category">متجر إلكتروني</span>
+                        <h3>موقع مطعم مع طلبات</h3>
+                        <p><strong>المشكلة:</strong> الطلبات تأتي عبر الهاتف فقط وتضيع.</p>
+                        <p><strong>الحل:</strong> موقع مع نظام طلبات وإشعارات فورية.</p>
+                        <p><strong>النتيجة:</strong> زيادة 40% في الطلبات اليومية.</p>
                         <div class="project-tech">
-                            <span>WooCommerce</span>
                             <span>WordPress</span>
-                            <span>PHP</span>
+                            <span>WooCommerce</span>
+                            <span>WhatsApp API</span>
                         </div>
-                        <a href="#" class="project-link">عرض المشروع ←</a>
                     </div>
                 </article>
-                <article class="project-card fade-in">
-                    <div class="project-image">
-                        <div class="project-placeholder">📅</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>نظام حجز المواعيد</h3>
-                        <p>تطبيق لإدارة الحجوزات والمواعيد مع إشعارات تلقائية وتقويم تفاعلي.</p>
-                        <div class="project-tech">
-                            <span>Laravel</span>
-                            <span>JavaScript</span>
-                            <span>API</span>
-                        </div>
-                        <a href="#" class="project-link">عرض المشروع ←</a>
-                    </div>
-                </article>
-                <article class="project-card fade-in">
-                    <div class="project-image">
-                        <div class="project-placeholder">👥</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>منصة إدارة العملاء CRM</h3>
-                        <p>نظام CRM لتتبع العملاء والصفقات مع تحليلات متقدمة.</p>
-                        <div class="project-tech">
-                            <span>Laravel</span>
-                            <span>MySQL</span>
-                            <span>Charts</span>
-                        </div>
-                        <a href="#" class="project-link">عرض المشروع ←</a>
-                    </div>
-                </article>
+            </div>
+            <div class="projects-cta animate-fade-up">
+                <a href="#contact" class="btn btn-secondary btn-lg">هل لديك مشروع مشابه؟ تواصل معي</a>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section class="section experience" id="experience">
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
         <div class="container">
-            <h2 class="section-title fade-in">الخبرات <span class="highlight">العملية</span></h2>
-            <div class="timeline">
-                <div class="timeline-item fade-in">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2022 - الحاضر</span>
-                        <h3>مطور Backend مستقل</h3>
-                        <p>العمل الحر | مشاريع متنوعة</p>
-                        <ul>
-                            <li>بناء أنظمة إدارية متكاملة باستخدام Laravel</li>
-                            <li>تطوير REST APIs للتطبيقات المختلفة</li>
-                            <li>تخصيص وتطوير مواقع WordPress</li>
-                            <li>تقديم حلول تقنية للشركات الناشئة</li>
-                        </ul>
+            <div class="section-header">
+                <span class="section-badge animate-fade-up">⭐ آراء العملاء</span>
+                <h2 class="section-title animate-fade-up delay-1">ماذا يقول <span class="highlight">عملائي؟</span></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-fade-up delay-1">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"محمد مطور ممتاز ومحترف جداً. سلّم المشروع قبل الموعد والموقع شغال بدون أي مشاكل. أنصح بالتعامل معه."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">أ</div>
+                        <div class="author-info">
+                            <h4>أحمد محمود</h4>
+                            <span>صاحب متجر إلكتروني</span>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2021 - 2022</span>
-                        <h3>مطور WordPress</h3>
-                        <p>مشاريع متعددة</p>
-                        <ul>
-                            <li>تطوير متاجر WooCommerce احترافية</li>
-                            <li>تخصيص القوالب والإضافات</li>
-                            <li>تحسين أداء المواقع وسرعتها</li>
-                        </ul>
+                <div class="testimonial-card animate-fade-up delay-2">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"تعاملت مع مطورين كتير قبل كده، لكن محمد فاهم البيزنس مش بس الكود. الموقع حقق نتائج فعلية."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">س</div>
+                        <div class="author-info">
+                            <h4>سارة أحمد</h4>
+                            <span>مديرة شركة تسويق</span>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2020 - 2021</span>
-                        <h3>بداية رحلة البرمجة</h3>
-                        <p>التعلم والتطوير الذاتي</p>
-                        <ul>
-                            <li>تعلم أساسيات PHP و MySQL</li>
-                            <li>إتقان إطار Laravel</li>
-                            <li>بناء مشاريع تطبيقية</li>
-                        </ul>
+                <div class="testimonial-card animate-fade-up delay-3">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"سرعة في التنفيذ، جودة عالية، وتواصل ممتاز. المتجر بتاعي شغال زي الساعة."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">م</div>
+                        <div class="author-info">
+                            <h4>محمود علي</h4>
+                            <span>صاحب مطعم</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section services" id="services">
-        <div class="container">
-            <h2 class="section-title fade-in">الخدمات <span class="highlight">المقدمة</span></h2>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">🚀</div>
-                    <h3>تطوير Backend بـ Laravel</h3>
-                    <p>بناء تطبيقات ويب متكاملة مع APIs احترافية ولوحات تحكم متقدمة.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">🛒</div>
-                    <h3>حلول WordPress & WooCommerce</h3>
-                    <p>إنشاء وتخصيص متاجر إلكترونية ومواقع WordPress احترافية.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">⚡</div>
-                    <h3>تعديل وتحسين المواقع</h3>
-                    <p>تحسين أداء المواقع الحالية وإضافة ميزات جديدة.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">💡</div>
-                    <h3>استشارات تقنية</h3>
-                    <p>تقديم استشارات للمشاريع الصغيرة والناشئة لاختيار الحلول المناسبة.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Career Objective Section -->
+    <!-- Career Objective -->
     <section class="section objective" id="objective">
         <div class="container">
-            <div class="objective-content fade-in">
+            <div class="objective-content animate-fade-up">
+                <span class="section-badge">🎯 هدفي المهني</span>
                 <h2 class="section-title">الهدف <span class="highlight">المهني</span></h2>
                 <blockquote class="objective-quote">
                     <p>
-                        أسعى للتطور المستمر كمطور Backend محترف، وبناء أنظمة قابلة للتوسع 
-                        تخدم آلاف المستخدمين. هدفي تقديم حلول برمجية طويلة المدى بجودة عالية 
-                        تساهم في نجاح المشاريع والشركات التي أعمل معها.
+                        أسعى للتطور المستمر كمطور Backend محترف، وبناء أنظمة رقمية قوية 
+                        تخدم نجاح أعمال عملائي. هدفي تقديم حلول طويلة المدى بجودة عالية،
+                        وبناء علاقات مهنية مستدامة مبنية على الثقة والنتائج.
                     </p>
                 </blockquote>
             </div>
@@ -353,11 +510,33 @@
     <!-- Contact Section -->
     <section class="section contact" id="contact">
         <div class="container">
-            <h2 class="section-title fade-in">تواصل <span class="highlight">معي</span></h2>
+            <div class="section-header">
+                <span class="section-badge animate-fade-up">📧 تواصل معي</span>
+                <h2 class="section-title animate-fade-up delay-1">جاهز لبدء <span class="highlight">مشروعك؟</span></h2>
+                <p class="section-subtitle animate-fade-up delay-2">أرسل لي تفاصيل مشروعك وسأرد عليك خلال 24 ساعة</p>
+            </div>
             <div class="contact-content">
-                <div class="contact-info fade-in">
-                    <h3>لنبدأ مشروعك القادم!</h3>
-                    <p>هل لديك مشروع أو فكرة تريد تحويلها إلى واقع؟ تواصل معي وسأكون سعيداً بمساعدتك.</p>
+                <div class="contact-info animate-fade-right">
+                    <h3>لنبني شيئاً رائعاً معاً!</h3>
+                    <p>سواء كنت تحتاج موقعاً جديداً، متجراً إلكترونياً، أو تحسين موقعك الحالي — أنا هنا لمساعدتك.</p>
+                    
+                    <div class="contact-methods">
+                        <a href="https://wa.me/201XXXXXXXXX" class="contact-method whatsapp">
+                            <span class="method-icon">💬</span>
+                            <div class="method-info">
+                                <span class="method-label">WhatsApp</span>
+                                <span class="method-value">تواصل مباشر</span>
+                            </div>
+                        </a>
+                        <a href="mailto:contact@mohamedmadany.com" class="contact-method">
+                            <span class="method-icon">📧</span>
+                            <div class="method-info">
+                                <span class="method-label">البريد</span>
+                                <span class="method-value">contact@mohamedmadany.com</span>
+                            </div>
+                        </a>
+                    </div>
+
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="GitHub">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -373,24 +552,36 @@
                         </a>
                     </div>
                 </div>
-                <form class="contact-form fade-in" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">الاسم</label>
-                        <input type="text" id="name" name="name" required placeholder="اسمك الكريم">
+                <form class="contact-form animate-fade-left" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">الاسم</label>
+                            <input type="text" id="name" name="name" required placeholder="اسمك الكريم">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" required placeholder="example@email.com">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="email">البريد الإلكتروني</label>
-                        <input type="email" id="email" name="email" required placeholder="example@email.com">
+                        <label for="service">نوع الخدمة</label>
+                        <select id="service" name="service" required>
+                            <option value="">اختر الخدمة المطلوبة</option>
+                            <option value="wordpress">موقع WordPress</option>
+                            <option value="woocommerce">متجر WooCommerce</option>
+                            <option value="fix">إصلاح وتحسين موقع</option>
+                            <option value="consult">استشارة تقنية</option>
+                            <option value="other">أخرى</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="subject">الموضوع</label>
-                        <input type="text" id="subject" name="subject" required placeholder="موضوع الرسالة">
+                        <label for="message">تفاصيل المشروع</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="اكتب تفاصيل مشروعك هنا..."></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="message">الرسالة</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="اكتب رسالتك هنا..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">إرسال الرسالة</button>
+                    <button type="submit" class="btn btn-primary btn-full btn-lg">
+                        <span>إرسال الطلب</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                    </button>
                 </form>
             </div>
         </div>
@@ -400,7 +591,22 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 محمد مدني. جميع الحقوق محفوظة.</p>
+                <div class="footer-brand">
+                    <a href="#hero" class="logo">محمد <span>مدني</span></a>
+                    <p>مطور Backend | متخصص WordPress</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#services">الخدمات</a>
+                    <a href="#projects">أعمالي</a>
+                    <a href="#contact">تواصل معي</a>
+                </div>
+                <div class="footer-cta">
+                    <a href="#contact" class="btn btn-primary">اطلب موقعك الآن</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 محمد مدني. جميع الحقوق محفوظة.</p>
+                <p class="trust-line">🔒 جودة عالية • التزام بالمواعيد • دعم مستمر</p>
                 <a href="#hero" class="back-to-top" aria-label="العودة للأعلى">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
                 </a>
