@@ -1548,6 +1548,69 @@ h1, h2, h3, h4, h5, h6 {
     background-position: left 15px center;
 }
 
+/* Form Validation Styles */
+.form-group input.invalid,
+.form-group textarea.invalid,
+.form-group select.invalid {
+    border-color: #FF4757;
+    box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.15);
+    animation: shake 0.4s ease;
+}
+
+.form-group input.valid,
+.form-group textarea.valid,
+.form-group select.valid {
+    border-color: #27c93f;
+    box-shadow: 0 0 0 3px rgba(39, 201, 63, 0.15);
+}
+
+.error-message {
+    display: block;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: #FF4757;
+}
+
+.error-message.show {
+    height: auto;
+    opacity: 1;
+    padding-top: 0.25rem;
+}
+
+.error-message.success {
+    color: #27c93f;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-left: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-6px); }
+    80% { transform: translateX(6px); }
+}
+
 /* ========================================
    Footer
 ======================================== */

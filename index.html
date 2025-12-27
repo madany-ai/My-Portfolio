@@ -266,7 +266,7 @@
         <div class="services-grid">
           <div class="service-card animate-fade-up delay-1">
             <div class="service-icon">🛠️</div>
-            <h3>أنظمة Backend مخصصة</h3>
+            <h3>نظام Laravel مخصص</h3>
             <ul class="service-features">
               <li>أنظمة إدارة ولوحات تحكم Laravel</li>
               <li>REST APIs وتكاملات</li>
@@ -733,7 +733,11 @@
               </a>
             </div>
           </div>
-          <form class="contact-form animate-fade-left" id="contactForm">
+          <form
+            class="contact-form animate-fade-left"
+            id="contactForm"
+            novalidate
+          >
             <div class="form-row">
               <div class="form-group">
                 <label for="name">الاسم</label>
@@ -741,24 +745,22 @@
                   type="text"
                   id="name"
                   name="name"
-                  required
                   placeholder="اسمك الكريم"
                 />
               </div>
               <div class="form-group">
                 <label for="email">البريد الإلكتروني</label>
                 <input
-                  type="email"
+                  type="text"
                   id="email"
                   name="email"
-                  required
                   placeholder="example@email.com"
                 />
               </div>
             </div>
             <div class="form-group">
               <label for="service">نوع الخدمة</label>
-              <select id="service" name="service" required>
+              <select id="service" name="service">
                 <option value="">اختر الخدمة المطلوبة</option>
                 <option value="laravel">نظام Laravel مخصص</option>
                 <option value="website">موقع شركة أو متجر إلكتروني</option>
@@ -773,7 +775,6 @@
                 id="message"
                 name="message"
                 rows="5"
-                required
                 placeholder="اكتب تفاصيل مشروعك هنا..."
               ></textarea>
             </div>

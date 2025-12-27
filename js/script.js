@@ -242,77 +242,146 @@ function initTypingEffect() {
 }
 
 /**
- * Contact Form Handling
+ * Contact Form Handling with Beautiful Custom Validation
  */
 function initContactForm() {
     const form = document.getElementById('contactForm');
     
     if (!form) return;
     
+    // Validation rules
+    const validationRules = {
+        name: (value) => value.trim().length >= 2,
+        email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+        service: (value) => value !== '',
+        message: (value) => value.trim().length >= 10
+    };
+    
+    // Show error state
+    function showError(field) {
+        field.classList.remove('valid');
+        field.classList.add('invalid');
+    }
+    
+    // Show success state
+    function showSuccess(field) {
+        field.classList.remove('invalid');
+        field.classList.add('valid');
+    }
+    
+    // Clear field state
+    function clearFieldState(field) {
+        field.classList.remove('invalid', 'valid');
+    }
+    
+    // Validate single field
+    function validateField(field) {
+        const rule = validationRules[field.name];
+        if (!rule) return true;
+        
+        if (rule(field.value)) {
+            showSuccess(field);
+            return true;
+        } else {
+            showError(field);
+            return false;
+        }
+    }
+    
+    // Validate all fields
+    function validateForm() {
+        let isValid = true;
+        let firstInvalidField = null;
+        
+        Object.keys(validationRules).forEach(fieldName => {
+            const field = form.querySelector(`[name="${fieldName}"]`);
+            if (field) {
+                const fieldValid = validateField(field);
+                if (!fieldValid && isValid) {
+                    firstInvalidField = field;
+                }
+                isValid = isValid && fieldValid;
+            }
+        });
+        
+        // Focus on first invalid field
+        if (firstInvalidField) {
+            firstInvalidField.focus();
+            shakeElement(firstInvalidField);
+        }
+        
+        return isValid;
+    }
+    
+    // Real-time validation on blur
+    const fields = form.querySelectorAll('input, textarea, select');
+    fields.forEach(field => {
+        // Validate on blur
+        field.addEventListener('blur', () => {
+            if (field.value.trim() !== '' || field.classList.contains('invalid')) {
+                validateField(field);
+            }
+        });
+        
+        // Clear error on input (if was invalid)
+        field.addEventListener('input', () => {
+            if (field.classList.contains('invalid')) {
+                validateField(field);
+            } else if (field.classList.contains('valid')) {
+                validateField(field);
+            }
+        });
+        
+        // Handle select change
+        if (field.tagName === 'SELECT') {
+            field.addEventListener('change', () => {
+                validateField(field);
+            });
+        }
+    });
+    
+    // Form submission
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+        
+        if (!validateForm()) {
+            // Show general error notification
+            showNotification('⚠️ يرجى ملء جميع الحقول بشكل صحيح', 'error');
+            return;
+        }
         
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
         
-        // Validation
-        const requiredFields = ['name', 'email', 'service', 'message'];
-        let isValid = true;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalHTML = submitBtn.innerHTML;
         
-        requiredFields.forEach(field => {
-            const input = form.querySelector(`[name="${field}"]`);
-            if (!data[field] || data[field].trim() === '') {
-                isValid = false;
-                input.style.borderColor = '#FF0628';
-                shakeElement(input);
-            } else {
-                input.style.borderColor = '';
-            }
-        });
+        // Loading state
+        submitBtn.innerHTML = '<span class="loading-spinner"></span><span>جاري الإرسال...</span>';
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.8';
         
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const emailInput = form.querySelector('[name="email"]');
-        
-        if (!emailRegex.test(data.email)) {
-            isValid = false;
-            emailInput.style.borderColor = '#FF0628';
-            shakeElement(emailInput);
-        }
-        
-        if (isValid) {
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalHTML = submitBtn.innerHTML;
+        // Simulate submission
+        setTimeout(() => {
+            submitBtn.innerHTML = '<span>✓ تم الإرسال بنجاح!</span>';
+            submitBtn.style.background = 'linear-gradient(135deg, #27c93f, #1fa830)';
             
-            submitBtn.innerHTML = '<span>جاري الإرسال...</span>';
-            submitBtn.disabled = true;
-            
-            // Simulate submission
             setTimeout(() => {
-                submitBtn.innerHTML = '<span>✓ تم الإرسال بنجاح!</span>';
-                submitBtn.style.background = 'linear-gradient(135deg, #27c93f, #1fa830)';
+                form.reset();
+                // Clear all field states
+                fields.forEach(field => clearFieldState(field));
                 
-                setTimeout(() => {
-                    form.reset();
-                    submitBtn.innerHTML = originalHTML;
-                    submitBtn.style.background = '';
-                    submitBtn.disabled = false;
-                    
-                    // Show success message
-                    showNotification('تم إرسال رسالتك بنجاح! سأتواصل معك قريباً.', 'success');
-                }, 2000);
-            }, 1500);
-            
-            console.log('Form submitted:', data);
-        }
-    });
-    
-    // Clear error styling on input
-    const inputs = form.querySelectorAll('input, textarea, select');
-    inputs.forEach(input => {
-        input.addEventListener('input', () => {
-            input.style.borderColor = '';
-        });
+                submitBtn.innerHTML = originalHTML;
+                submitBtn.style.background = '';
+                submitBtn.style.opacity = '';
+                submitBtn.disabled = false;
+                
+                // Show success message
+                showNotification('🎉 تم إرسال رسالتك بنجاح! سأتواصل معك قريباً.', 'success');
+            }, 2500);
+        }, 1500);
+        
+        console.log('Form submitted:', data);
     });
 }
 
@@ -355,28 +424,60 @@ function showNotification(message, type = 'info') {
         <button onclick="this.parentElement.remove()">×</button>
     `;
     
+    // Define colors based on type
+    let bgColor;
+    switch(type) {
+        case 'success':
+            bgColor = 'linear-gradient(135deg, #27c93f, #1fa830)';
+            break;
+        case 'error':
+            bgColor = 'linear-gradient(135deg, #FF4757, #FF0628)';
+            break;
+        default:
+            bgColor = 'linear-gradient(135deg, #FFB50F, #FF9500)';
+    }
+    
     // Add notification styles
     notification.style.cssText = `
         position: fixed;
         bottom: 20px;
         left: 20px;
-        background: ${type === 'success' ? '#27c93f' : '#FFB50F'};
-        color: #000;
+        background: ${bgColor};
+        color: #fff;
         padding: 15px 20px;
-        border-radius: 10px;
+        border-radius: 12px;
         display: flex;
         align-items: center;
         gap: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         z-index: 9999;
-        animation: slideIn 0.3s ease;
+        animation: slideIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         font-weight: 500;
+        font-size: 14px;
+        max-width: 350px;
+    `;
+    
+    // Style the close button
+    const closeBtn = notification.querySelector('button');
+    closeBtn.style.cssText = `
+        background: rgba(255,255,255,0.2);
+        border: none;
+        color: #fff;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
     `;
     
     document.body.appendChild(notification);
     
     setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease';
+        notification.style.animation = 'slideOut 0.3s ease forwards';
         setTimeout(() => notification.remove(), 300);
     }, 5000);
 }
