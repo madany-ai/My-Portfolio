@@ -3,22 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline';"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- SEO Meta Tags -->
     <meta
       name="description"
       content="محمد مدني - مطور Full-Stack متخصص في بناء أنظمة ويب متكاملة باستخدام Laravel وحلول أعمال عملية مثل WordPress و WooCommerce. أتمتة وتكاملات ذكية لخدمة نمو أعمالك."
     />
     <meta
       name="keywords"
-      content=" sمطور Full-Stack, Laravel, WordPress, Mohamed Madany,Mohamed Gamal Madany,محمد جمال مدني,مدني, محمد مدني, WooCommerce, أتمتة, APIs, تكاملات, أنظمة ويب, PHP, متجر إلكتروني"
+      content="مطور Full-Stack, Laravel, WordPress, Mohamed Madany, Mohamed Gamal Madany, محمد جمال مدني, مدني, محمد مدني, WooCommerce, أتمتة, APIs, تكاملات, أنظمة ويب, PHP, متجر إلكتروني"
     />
     <meta name="author" content="Mohamed Madany" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href="https://mohamedmadany.com" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mohamedmadany.com" />
+    <meta
+      property="og:title"
+      content="محمد مدني | مطور Full-Stack - أنظمة ويب وحلول أعمال متكاملة"
+    />
+    <meta
+      property="og:description"
+      content="مطور Full-Stack متخصص في بناء أنظمة ويب متكاملة باستخدام Laravel وحلول أعمال عملية. أتمتة وتكاملات ذكية لخدمة نمو أعمالك."
+    />
+    <meta
+      property="og:image"
+      content="https://mohamedmadany.com/images/profile.png"
+    />
+    <meta property="og:locale" content="ar_EG" />
+    <meta property="og:site_name" content="Mohamed Madany Portfolio" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://mohamedmadany.com" />
+    <meta
+      name="twitter:title"
+      content="محمد مدني | مطور Full-Stack - أنظمة ويب وحلول أعمال متكاملة"
+    />
+    <meta
+      name="twitter:description"
+      content="مطور Full-Stack متخصص في بناء أنظمة ويب متكاملة باستخدام Laravel وحلول أعمال عملية."
+    />
+    <meta
+      name="twitter:image"
+      content="https://mohamedmadany.com/images/profile.png"
+    />
+
     <title>محمد مدني | مطور Full-Stack - أنظمة ويب وحلول أعمال متكاملة</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/profile.png" />
+    <link rel="apple-touch-icon" href="images/profile.png" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -684,50 +742,53 @@
 
             <div class="contact-methods">
               <a
-                href="https://wa.me/201XXXXXXXXX"
+                href="https://wa.me/201001027923"
                 class="contact-method whatsapp"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span class="method-icon">💬</span>
                 <div class="method-info">
-                  <span class="method-label">WhatsApp</span>
-                  <span class="method-value">تواصل مباشر</span>
+                  <span class="method-label">واتساب</span>
+                  <span class="method-value">WhatsApp</span>
                 </div>
               </a>
-              <a href="mailto:contact@mohamedmadany.com" class="contact-method">
+              <a
+                href="mailto:mohamedgamalmadany@gmail.com"
+                class="contact-method"
+              >
                 <span class="method-icon">📧</span>
                 <div class="method-info">
                   <span class="method-label">البريد</span>
-                  <span class="method-value">contact@mohamedmadany.com</span>
+                  <span class="method-value">mohamedgamalmadany@gmail.com</span>
                 </div>
               </a>
             </div>
 
             <div class="social-links">
-              <a href="#" class="social-link" aria-label="GitHub">
+              <a
+                href="https://github.com/mohamed-madany"
+                class="social-link"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path
                     d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
                   />
                 </svg>
               </a>
-              <a href="#" class="social-link" aria-label="LinkedIn">
+              <a
+                href="https://www.linkedin.com/in/mohamedmadany0/"
+                class="social-link"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path
                     d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                  />
-                </svg>
-              </a>
-              <a href="#" class="social-link" aria-label="YouTube">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-                  />
-                </svg>
-              </a>
-              <a href="#" class="social-link" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
                   />
                 </svg>
               </a>
