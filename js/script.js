@@ -202,7 +202,7 @@ function initTypingEffect() {
     const words = [
         'قابلة للتوسع',
         'تحل مشاكل حقيقية',
-        'مؤتمتة وذكية',
+        'Automated & Smart',
         'مبنية للاستقرار',
         'تخدم نمو أعمالك'
     ];
@@ -242,7 +242,7 @@ function initTypingEffect() {
 }
 
 /**
- * Contact Form Handling with Beautiful Custom Validation
+ * Contact Form Handling with Netlify Forms Support
  */
 function initContactForm() {
     const form = document.getElementById('contactForm');
@@ -316,6 +316,9 @@ function initContactForm() {
     // Real-time validation on blur
     const fields = form.querySelectorAll('input, textarea, select');
     fields.forEach(field => {
+        // Skip honeypot and hidden fields
+        if (field.name === 'bot-field' || field.type === 'hidden') return;
+        
         // Validate on blur
         field.addEventListener('blur', () => {
             if (field.value.trim() !== '' || field.classList.contains('invalid')) {
@@ -340,19 +343,24 @@ function initContactForm() {
         }
     });
     
-    // Form submission
-    form.addEventListener('submit', (e) => {
+    // Form submission with Netlify Forms
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
+        // Check honeypot - if filled, it's a bot
+        const honeypot = form.querySelector('[name="bot-field"]');
+        if (honeypot && honeypot.value) {
+            // Silently reject bot submissions
+            console.log('Bot detected');
+            return;
+        }
+        
         if (!validateForm()) {
-            // Show general error notification
             showNotification('⚠️ يرجى ملء جميع الحقول بشكل صحيح', 'error');
             return;
         }
         
         const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-        
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalHTML = submitBtn.innerHTML;
         
@@ -361,27 +369,45 @@ function initContactForm() {
         submitBtn.disabled = true;
         submitBtn.style.opacity = '0.8';
         
-        // Simulate submission
-        setTimeout(() => {
-            submitBtn.innerHTML = '<span>✓ تم الإرسال بنجاح!</span>';
-            submitBtn.style.background = 'linear-gradient(135deg, #27c93f, #1fa830)';
+        try {
+            // Submit to Netlify Forms
+            const response = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            });
             
-            setTimeout(() => {
-                form.reset();
-                // Clear all field states
-                fields.forEach(field => clearFieldState(field));
+            if (response.ok) {
+                // Success
+                submitBtn.innerHTML = '<span>✓ تم الإرسال بنجاح!</span>';
+                submitBtn.style.background = 'linear-gradient(135deg, #27c93f, #1fa830)';
                 
-                submitBtn.innerHTML = originalHTML;
-                submitBtn.style.background = '';
-                submitBtn.style.opacity = '';
-                submitBtn.disabled = false;
-                
-                // Show success message
-                showNotification('🎉 تم إرسال رسالتك بنجاح! سأتواصل معك قريباً.', 'success');
-            }, 2500);
-        }, 1500);
-        
-        console.log('Form submitted:', data);
+                setTimeout(() => {
+                    form.reset();
+                    // Clear all field states
+                    fields.forEach(field => clearFieldState(field));
+                    
+                    submitBtn.innerHTML = originalHTML;
+                    submitBtn.style.background = '';
+                    submitBtn.style.opacity = '';
+                    submitBtn.disabled = false;
+                    
+                    // Show success message
+                    showNotification('🎉 تم إرسال رسالتك بنجاح! سأتواصل معك قريباً.', 'success');
+                }, 2500);
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            
+            // Error state
+            submitBtn.innerHTML = originalHTML;
+            submitBtn.style.opacity = '';
+            submitBtn.disabled = false;
+            
+            showNotification('❌ حدث خطأ في الإرسال. يرجى المحاولة مرة أخرى أو التواصل عبر WhatsApp.', 'error');
+        }
     });
 }
 
