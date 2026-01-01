@@ -80,19 +80,273 @@
     <title>مطور ويب متخصص | تصميم متاجر WooCommerce وبرمجة أنظمة Laravel</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/profile.png" />
-    <link rel="apple-touch-icon" href="images/profile.png" />
+    <link rel="icon" type="image/webp" href="images/profile.webp" />
+    <link rel="apple-touch-icon" href="images/profile.webp" />
 
-    <!-- Fonts - Preload for Performance -->
+    <!-- Preload LCP Image for faster Largest Contentful Paint -->
+    <link
+      rel="preload"
+      as="image"
+      href="images/profile.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+
+    <!-- Preload Critical Font -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="https://fonts.gstatic.com/s/ibmplexsansarabic/v12/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6YNe3A.woff2"
+      crossorigin
+    />
+
+    <!-- Fonts - Optimized with font-display: swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css" />
+    <!-- Critical CSS - Inline for instant render -->
+    <style>
+      :root {
+        --primary: #ffb50f;
+        --primary-dark: #e6a00d;
+        --bg-dark: #000;
+        --bg-card: #0a0a0a;
+        --text-primary: #fff;
+        --text-secondary: #b0b0b0;
+        --border-color: #1a1a1a;
+        --font-family: "IBM Plex Sans Arabic", system-ui, sans-serif;
+      }
+      *,
+      ::before,
+      ::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+      body {
+        font-family: var(--font-family);
+        background-color: var(--bg-dark);
+        color: var(--text-primary);
+        line-height: 1.8;
+        direction: rtl;
+        text-align: right;
+        -webkit-font-smoothing: antialiased;
+      }
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      .navbar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1000;
+        padding: 1rem 0;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border-color);
+      }
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        text-decoration: none;
+      }
+      .logo span {
+        color: var(--primary);
+      }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+      .nav-links a {
+        color: var(--text-secondary);
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-decoration: none;
+      }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .theme-toggle {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        cursor: pointer;
+      }
+      .menu-toggle {
+        display: none;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 12px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .btn-primary {
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
+        color: #000;
+        box-shadow: 0 0 30px rgba(255, 181, 15, 0.25);
+        border: none;
+      }
+      .btn-nav {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.875rem;
+      }
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-top: 80px;
+      }
+      .hero-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+      .hero-badge {
+        display: inline-block;
+        background: rgba(255, 181, 15, 0.1);
+        color: var(--primary);
+        padding: 0.5rem 1.5rem;
+        border-radius: 30px;
+        font-size: 0.875rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(255, 181, 15, 0.2);
+      }
+      .hero-title {
+        font-size: 4.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(
+          135deg,
+          var(--text-primary) 0%,
+          var(--primary) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1.2;
+      }
+      .hero-subtitle {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+      }
+      .hero-description {
+        font-size: 1.125rem;
+        color: var(--text-secondary);
+        line-height: 2;
+        margin-bottom: 2rem;
+        max-width: 500px;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .hero-image {
+        position: relative;
+      }
+      .image-container {
+        position: relative;
+      }
+      .profile-img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 20px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
+      @media (max-width: 768px) {
+        .hero-container {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        .hero-subtitle {
+          font-size: 1.25rem;
+        }
+        .nav-links {
+          display: none;
+        }
+        .menu-toggle {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          padding: 10px;
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+        .menu-toggle span {
+          width: 24px;
+          height: 2px;
+          background: var(--text-primary);
+        }
+        .btn-nav {
+          display: none;
+        }
+      }
+    </style>
+
+    <!-- Main Styles - Deferred loading -->
+    <link
+      rel="preload"
+      href="css/style.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="css/style.css" /></noscript>
 
     <!-- Structured Data - LocalBusiness + Person -->
     <script type="application/ld+json">
@@ -215,12 +469,27 @@
         </div>
         <div class="hero-image animate-fade-left delay-2">
           <div class="image-container">
-            <img
-              src="images/profile.png"
-              alt="محمد مدني - مطور ويب متخصص في WordPress و Laravel"
-              class="profile-img"
-              loading="eager"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  images/profile-400.webp 400w,
+                  images/profile-600.webp 600w,
+                  images/profile.webp     800w
+                "
+                sizes="(max-width: 768px) 300px, 400px"
+              />
+              <img
+                src="images/profile-optimized.png"
+                alt="محمد مدني - مطور ويب متخصص في WordPress و Laravel"
+                class="profile-img"
+                width="400"
+                height="400"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
             <div class="image-glow"></div>
             <div class="floating-card card-1 animate-float">
               <span class="card-icon">📈</span>
@@ -254,8 +523,8 @@
             لماذا تختارني <span class="highlight">لمشروعك ؟</span>
           </h2>
           <p class="section-subtitle animate-fade-up delay-2">
-            لا أقدم خدمات برمجة فقط  أقدم حلولاً تؤثر مباشرة على إيراداتك
-            وكفاءة عملياتك
+            لا أقدم خدمات برمجة فقط أقدم حلولاً تؤثر مباشرة على إيراداتك وكفاءة
+            عملياتك
           </p>
         </div>
         <div class="why-grid">
@@ -266,8 +535,8 @@
             <p>
               <strong>لماذا يهمك هذا؟</strong> معظم المشاريع تفشل لأن المطور لا
               يفهم المشكلة الحقيقية. أبدأ بفهم أهدافك التجارية، عملائك، وتحدياتك
-               ثم أختار التقنية المناسبة. النتيجة: حل يخدم نموك فعلاً، وليس
-              مجرد موقع جميل.
+              ثم أختار التقنية المناسبة. النتيجة: حل يخدم نموك فعلاً، وليس مجرد
+              موقع جميل.
             </p>
           </div>
           <!-- Card 2: Performance = Revenue -->
@@ -276,9 +545,9 @@
             <h3>السرعة و Performance</h3>
             <p>
               <strong>لماذا يهمك هذا؟</strong> الأداء مش مجرد سرعة تحميل. هو
-              استقرار، تجربة مستخدم سلسة، وقدرة الموقع على العمل تحت الضغط.  النتيجة:
-              موقع يعتمد عليه في البيع، التسويق، والتوسع  مش مجرد Score عالي في
-              أدوات القياس.
+              استقرار، تجربة مستخدم سلسة، وقدرة الموقع على العمل تحت الضغط.
+              النتيجة: موقع يعتمد عليه في البيع، التسويق، والتوسع مش مجرد Score
+              عالي في أدوات القياس.
             </p>
           </div>
           <!-- Card 3: Security = Continuity -->
@@ -311,31 +580,45 @@
         <div class="about-content">
           <div class="about-image animate-fade-right">
             <div class="about-img-wrapper">
-              <img
-                src="images/profile.png"
-                alt="محمد مدني - مطور ويب متخصص"
-                class="about-img"
-                loading="lazy"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    images/profile-400.webp 400w,
+                    images/profile-600.webp 600w,
+                    images/profile.webp     800w
+                  "
+                  sizes="(max-width: 768px) 250px, 350px"
+                />
+                <img
+                  src="images/profile-optimized.png"
+                  alt="محمد مدني - مطور ويب متخصص"
+                  class="about-img"
+                  width="350"
+                  height="350"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
           </div>
           <div class="about-text">
             <span class="section-badge animate-fade-up">👋 نبذة عني</span>
-            
+
             <p class="animate-fade-up delay-2">
-              أنا <strong>محمد جمال مدني</strong>، مطور Full-Stack متخصص في بناء حلول
-              ويب للشركات الصغيرة والمتوسطة، الوكالات، والمشاريع الناشئة في
+              أنا <strong>محمد جمال مدني</strong>، مطور Full-Stack متخصص في بناء
+              حلول ويب للشركات الصغيرة والمتوسطة، الوكالات، والمشاريع الناشئة في
               <strong>الخليج والشرق الأوسط</strong>.
             </p>
             <p class="animate-fade-up delay-3">
               <strong>منهجيتي:</strong> أبدأ بفهم مشكلتك التجارية، ثم أختار
-              التقنية الأنسب  وليس العكس:
+              التقنية الأنسب وليس العكس:
             </p>
             <div class="about-features animate-fade-up delay-4">
               <div class="feature">
                 <span class="feature-icon">✓</span>
                 <span>
-                  <strong>WordPress & WooCommerce</strong>  للشركات التي تحتاج
+                  <strong>WordPress & WooCommerce</strong> للشركات التي تحتاج
                   موقع أو متجر سريع الإطلاق. مثالي لمن يريد البدء بتكلفة معقولة
                   مع إمكانية إدارة المحتوى بنفسه.
                 </span>
@@ -343,7 +626,7 @@
               <div class="feature">
                 <span class="feature-icon">✓</span>
                 <span>
-                  <strong>Laravel & PHP</strong>  للأنظمة المخصصة التي تتجاوز
+                  <strong>Laravel & PHP</strong> للأنظمة المخصصة التي تتجاوز
                   الحلول الجاهزة. Dashboard متقدم، APIs، منطق أعمال معقد، أو
                   تكاملات مع أنظمة أخرى.
                 </span>
@@ -351,15 +634,15 @@
               <div class="feature">
                 <span class="feature-icon">✓</span>
                 <span>
-                  <strong>AI Automation</strong>  لتقليل المهام اليدوية
-                  المتكررة. ربط الأنظمة، إشعارات تلقائية عبر WhatsApp، ومعالجة
-                  البيانات آلياً. النتيجة: توفير ساعات عمل يومياً.
+                  <strong>AI Automation</strong> لتقليل المهام اليدوية المتكررة.
+                  ربط الأنظمة، إشعارات تلقائية عبر WhatsApp، ومعالجة البيانات
+                  آلياً. النتيجة: توفير ساعات عمل يومياً.
                 </span>
               </div>
               <div class="feature">
                 <span class="feature-icon">✓</span>
                 <span>
-                  <strong>Performance & Security</strong>  السرعة والأمان ليسا
+                  <strong>Performance & Security</strong> السرعة والأمان ليسا
                   رفاهية. كل مشروع يُبنى مع التركيز على الأداء العالي والحماية
                   المتقدمة من الاختراقات.
                 </span>
@@ -386,13 +669,11 @@
             خدمات <span class="highlight">تصميم وبرمجة مواقع</span> للشركات
           </h2>
           <p class="section-subtitle animate-fade-up delay-2">
-            حلول مرتبة حسب مراحل نمو عملك  من الانطلاق السريع إلى الأنظمة
+            حلول مرتبة حسب مراحل نمو عملك من الانطلاق السريع إلى الأنظمة
             المتقدمة
           </p>
         </div>
         <div class="services-grid">
-          
-
           <!-- Service 2: Maintenance & Support (Recurring Value) -->
           <article class="service-card animate-fade-up delay-2">
             <div class="service-icon">⚙️</div>
@@ -410,7 +691,7 @@
             </ul>
             <p class="service-best-for">
               <strong>الأنسب لك إذا:</strong> لديك موقع قائم وتحتاج من يتابعه
-              تقنياً ليبقى سريع، آمن، ومستقر  بدون أن تقلق.
+              تقنياً ليبقى سريع، آمن، ومستقر بدون أن تقلق.
             </p>
             <a href="#contact" class="service-cta">اطلب خطة صيانة ←</a>
           </article>
@@ -441,7 +722,7 @@
             <div class="service-icon">⚡</div>
             <h3>AI Automation وربط الأنظمة عبر API</h3>
             <p class="service-problem">
-              <strong>المشكلة:</strong> تقضي ساعات يومياً في مهام متكررة  نقل
+              <strong>المشكلة:</strong> تقضي ساعات يومياً في مهام متكررة نقل
               بيانات، إرسال إشعارات، أو تحديث أنظمة متعددة يدوياً.
             </p>
             <ul class="service-features">
@@ -499,9 +780,9 @@
               <h3>للإطلاق السريع وتحقيق الإيرادات</h3>
             </div>
             <p class="skill-description">
-              WordPress و WooCommerce  للحصول على موقع أو متجر يعمل بسرعة،
-              بتكلفة معقولة، مع إمكانية إدارة المحتوى بنفسك. مثالي للشركات
-              الناشئة والمتاجر الإلكترونية.
+              WordPress و WooCommerce للحصول على موقع أو متجر يعمل بسرعة، بتكلفة
+              معقولة، مع إمكانية إدارة المحتوى بنفسك. مثالي للشركات الناشئة
+              والمتاجر الإلكترونية.
             </p>
             <div class="skill-tags">
               <span class="skill-tag">WordPress</span>
@@ -516,9 +797,9 @@
               <h3>للأنظمة المخصصة والتوسع</h3>
             </div>
             <p class="skill-description">
-              Laravel و PHP  عندما تحتاج نظام مخصص بالكامل: Dashboard متقدم،
-              منطق أعمال معقد، أو APIs تربط أنظمتك المختلفة. بنية قوية تتوسع مع
-              نمو عملك.
+              Laravel و PHP عندما تحتاج نظام مخصص بالكامل: Dashboard متقدم، منطق
+              أعمال معقد، أو APIs تربط أنظمتك المختلفة. بنية قوية تتوسع مع نمو
+              عملك.
             </p>
             <div class="skill-tags">
               <span class="skill-tag">Laravel</span>
@@ -533,7 +814,7 @@
               <h3>للأتمتة والكفاءة التشغيلية</h3>
             </div>
             <p class="skill-description">
-              AI Automation و API Integration  لربط أنظمتك المختلفة، أتمتة
+              AI Automation و API Integration لربط أنظمتك المختلفة، أتمتة
               الإشعارات، ومعالجة البيانات آلياً. وفّر ساعات عمل يومياً وقلل
               الأخطاء البشرية.
             </p>
@@ -727,7 +1008,7 @@
                 <li>شركة أو مشروع حقيقي يبحث عن حلول عملية تُحقق نتائج</li>
                 <li>تُقدّر الجودة وتفهم أنها تتطلب استثماراً مناسباً</li>
                 <li>مستعد للتعاون لفهم احتياجاتك الحقيقية</li>
-                <li>تبحث عن شريك تقني طويل المدى  وليس مجرد منفذ</li>
+                <li>تبحث عن شريك تقني طويل المدى وليس مجرد منفذ</li>
                 <li>تُريد موقع/نظام سريع، آمن، ويخدم نمو عملك</li>
               </ul>
             </div>
@@ -911,6 +1192,6 @@
       </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>

@@ -1,0 +1,29 @@
+{
+  "name": "website-portfolio",
+  "version": "1.0.0",
+  "description": "Mohamed Madany - Full-Stack Web Developer Portfolio",
+  "main": "index.html",
+  "scripts": {
+    "optimize-images": "node optimize-images.js",
+    "build": "npm run optimize-images"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamed-madany/My-Portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "web-developer",
+    "laravel",
+    "wordpress"
+  ],
+  "author": "Mohamed Gamal Madany",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohamed-madany/My-Portfolio/issues"
+  },
+  "homepage": "https://github.com/mohamed-madany/My-Portfolio#readme",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}

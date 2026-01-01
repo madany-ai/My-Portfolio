@@ -1,0 +1,169 @@
+/* Critical CSS - Inline styles for above-the-fold content */
+/* This file contains only the essential styles needed for initial render */
+
+:root {
+  --primary: #ffb50f;
+  --primary-dark: #e6a00d;
+  --bg-dark: #000000;
+  --bg-card: #0a0a0a;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --border-color: #1a1a1a;
+  --font-family: "IBM Plex Sans Arabic", sans-serif;
+  --transition-normal: 0.3s ease;
+  --glow-primary: 0 0 30px rgba(255, 181, 15, 0.25);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.8;
+  direction: rtl;
+  text-align: right;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Navbar - Critical for layout shift prevention */
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container { display: flex; align-items: center; justify-content: space-between; }
+
+.logo { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); text-decoration: none; }
+.logo span { color: var(--primary); }
+
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--text-secondary); font-size: 0.875rem; font-weight: 500; text-decoration: none; }
+
+.nav-actions { display: flex; align-items: center; gap: 1rem; }
+
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+.menu-toggle { display: none; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #000;
+  box-shadow: var(--glow-primary);
+  border: none;
+}
+
+.btn-nav { padding: 0.5rem 1.5rem; font-size: 0.875rem; }
+
+/* Hero Section - Critical for LCP */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 80px;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 181, 15, 0.1);
+  color: var(--primary);
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 181, 15, 0.2);
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 2;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.hero-image { position: relative; }
+
+.image-container { position: relative; }
+
+.profile-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Mobile critical styles */
+@media (max-width: 768px) {
+  .hero-container { grid-template-columns: 1fr; text-align: center; }
+  .hero-title { font-size: 2.5rem; }
+  .hero-subtitle { font-size: 1.25rem; }
+  .nav-links { display: none; }
+  .menu-toggle { display: flex; flex-direction: column; gap: 5px; padding: 10px; background: none; border: none; cursor: pointer; }
+  .menu-toggle span { width: 24px; height: 2px; background: var(--text-primary); }
+  .btn-nav { display: none; }
+}
