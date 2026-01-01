@@ -25,8 +25,8 @@
   --glow-secondary: 0 0 30px rgba(15, 95, 255, 0.25);
   --glow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
 
-  /* Typography */
-  --font-family: "IBM Plex Sans Arabic", "Cairo", "Tajawal", sans-serif;
+  /* Typography - with system font fallback to prevent CLS */
+  --font-family: "IBM Plex Sans Arabic", system-ui, -apple-system, sans-serif;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;

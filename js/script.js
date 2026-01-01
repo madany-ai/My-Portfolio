@@ -59,9 +59,10 @@ function initNavigation() {
         });
     });
     
-    // Navbar scroll effect
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
+    // Navbar scroll effect - optimized with requestAnimationFrame
+    let ticking = false;
+    
+    const handleScroll = () => {
         const currentScroll = window.pageYOffset;
         
         if (currentScroll > 50) {
@@ -70,30 +71,54 @@ function initNavigation() {
             navbar.classList.remove('scrolled');
         }
         
-        lastScroll = currentScroll;
-    });
-    
-    // Active nav link based on scroll position
-    const sections = document.querySelectorAll('section[id]');
-    
-    const updateActiveLink = () => {
-        const scrollY = window.pageYOffset;
-        
-        sections.forEach(section => {
-            const sectionHeight = section.offsetHeight;
-            const sectionTop = section.offsetTop - 150;
-            const sectionId = section.getAttribute('id');
-            const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
-            
-            if (navLink && scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navItems.forEach(item => item.classList.remove('active'));
-                navLink.classList.add('active');
-            }
-        });
+        updateActiveLink(currentScroll);
+        ticking = false;
     };
     
-    window.addEventListener('scroll', updateActiveLink);
-    updateActiveLink();
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(handleScroll);
+            ticking = true;
+        }
+    }, { passive: true });
+    
+    // Active nav link based on scroll position
+    // Cache section positions to avoid forced reflow
+    const sections = document.querySelectorAll('section[id]');
+    let sectionData = [];
+    
+    const cacheSectionPositions = () => {
+        sectionData = Array.from(sections).map(section => ({
+            id: section.getAttribute('id'),
+            top: section.offsetTop - 150,
+            bottom: section.offsetTop + section.offsetHeight - 150
+        }));
+    };
+    
+    // Cache positions on load and resize (debounced)
+    cacheSectionPositions();
+    
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(cacheSectionPositions, 250);
+    }, { passive: true });
+    
+    const updateActiveLink = (scrollY) => {
+        for (const section of sectionData) {
+            if (scrollY > section.top && scrollY <= section.bottom) {
+                const navLink = document.querySelector(`.nav-links a[href="#${section.id}"]`);
+                if (navLink && !navLink.classList.contains('active')) {
+                    navItems.forEach(item => item.classList.remove('active'));
+                    navLink.classList.add('active');
+                }
+                break;
+            }
+        }
+    };
+    
+    // Initial update
+    updateActiveLink(window.pageYOffset);
 }
 
 /**
