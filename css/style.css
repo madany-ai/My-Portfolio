@@ -330,7 +330,6 @@ select {
   }
 }
 
-
 @keyframes slideDown {
   0%,
   100% {
@@ -539,7 +538,6 @@ h6 {
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
   transition: all var(--transition-normal);
-  overflow: hidden;
 }
 
 .navbar.scrolled {
@@ -792,13 +790,26 @@ h6 {
 
 .hero-trust {
   display: flex;
-  gap: var(--spacing-xl);
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
   padding-top: var(--spacing-xl);
   border-top: 1px solid var(--border-color);
 }
 
 .trust-item {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.trust-icon {
+  font-size: var(--font-size-lg);
+}
+
+.trust-text {
+  font-weight: 500;
 }
 
 .trust-number {
@@ -1058,22 +1069,24 @@ h6 {
 }
 
 .about-features {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: var(--spacing-md);
   margin: var(--spacing-xl) 0;
 }
 
 .feature {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--spacing-sm);
   color: var(--text-secondary);
+  line-height: 1.7;
 }
 
 .feature-icon {
   color: var(--primary);
   font-weight: 700;
+  margin-top: 2px;
 }
 
 /* ========================================
@@ -1150,6 +1163,14 @@ h6 {
   border-bottom: none;
 }
 
+.service-problem {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.7;
+  text-align: right;
+}
+
 .service-cta {
   color: var(--primary);
   font-weight: 600;
@@ -1162,12 +1183,24 @@ h6 {
   letter-spacing: 1px;
 }
 
+.service-best-for {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: rgba(255, 181, 15, 0.05);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  text-align: right;
+  line-height: 1.7;
+  border-right: 3px solid var(--primary);
+}
+
 /* ========================================
    Skills Section
 ======================================== */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-xl);
 }
 
@@ -1226,6 +1259,13 @@ h6 {
   border-color: rgba(255, 181, 15, 0.4);
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(255, 181, 15, 0.15);
+}
+
+.skill-description {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
 }
 
 /* ========================================
@@ -1479,6 +1519,66 @@ h6 {
   margin-bottom: var(--spacing-xl);
   line-height: 2;
   font-size: var(--font-size-lg);
+}
+
+.qualification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+.qualification-list li {
+  color: var(--text-secondary);
+  padding: var(--spacing-sm) 0;
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+}
+
+.qualification-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+.qualification-box h4 {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+.qualification-box.good-fit {
+  border-color: rgba(39, 201, 63, 0.3);
+  background: rgba(39, 201, 63, 0.05);
+}
+
+.qualification-box.good-fit h4 {
+  color: #27c93f;
+}
+
+.qualification-box.not-fit {
+  border-color: rgba(255, 71, 87, 0.3);
+  background: rgba(255, 71, 87, 0.05);
+}
+
+.qualification-box.not-fit h4 {
+  color: #ff4757;
+}
+
+.qualification-note {
+  background: rgba(255, 181, 15, 0.08);
+  border: 1px solid rgba(255, 181, 15, 0.2);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.7;
+}
+
+.qualification-note strong {
+  color: var(--primary);
 }
 
 .contact-methods {
@@ -2012,9 +2112,8 @@ body {
     white-space: nowrap;
   }
 
-  /* About features - single column on mobile */
+  /* About features - ensure proper display on mobile */
   .about-features {
-    grid-template-columns: 1fr;
     gap: var(--spacing-sm);
     text-align: right;
   }
