@@ -1,0 +1,21 @@
+/* ========================================
+   Projects Section Styles
+   Projects grid and CTA
+======================================== */
+
+/* ======================
+   Projects Grid
+====================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+}
+
+/* ======================
+   Projects CTA
+====================== */
+.projects-cta {
+  text-align: center;
+  margin-top: var(--spacing-2xl);
+}

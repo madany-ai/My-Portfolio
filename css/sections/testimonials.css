@@ -1,0 +1,57 @@
+/* ========================================
+   Testimonials Section Styles
+   Testimonials and Objective sections
+======================================== */
+
+/* ======================
+   Testimonials Section
+====================== */
+.testimonials {
+  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+}
+
+/* ======================
+   Objective Section
+====================== */
+.objective {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 181, 15, 0.05) 0%,
+    rgba(15, 95, 255, 0.05) 100%
+  );
+}
+
+.objective-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.objective-quote {
+  position: relative;
+  padding: var(--spacing-2xl);
+}
+
+.objective-quote::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  right: 0;
+  font-size: 8rem;
+  color: var(--primary);
+  opacity: 0.15;
+  font-family: serif;
+  line-height: 1;
+}
+
+.objective-quote p {
+  font-size: var(--font-size-xl);
+  color: var(--text-secondary);
+  line-height: 2;
+}

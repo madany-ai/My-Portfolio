@@ -1,0 +1,112 @@
+/* ========================================
+   Contact Section Styles
+   Contact form and info layout
+======================================== */
+
+/* ======================
+   Contact Content Grid
+====================== */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  align-items: start;
+  overflow: hidden;
+}
+
+/* ======================
+   Contact Info
+====================== */
+.contact-info h3 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-md);
+}
+
+.contact-info > p {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+  line-height: 2;
+  font-size: var(--font-size-lg);
+}
+
+/* ======================
+   Contact Methods
+====================== */
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md) var(--spacing-lg);
+  transition: all var(--transition-normal);
+}
+
+.contact-method:hover {
+  border-color: var(--primary);
+  box-shadow: var(--glow-primary);
+  transform: translateX(-5px);
+}
+
+.contact-method.whatsapp {
+  border-color: #25d366;
+}
+
+.contact-method.whatsapp:hover {
+  box-shadow: 0 0 30px rgba(37, 211, 102, 0.3);
+}
+
+.method-icon {
+  font-size: var(--font-size-2xl);
+}
+
+.method-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.method-value {
+  font-weight: 500;
+}
+
+/* ======================
+   Social Links
+====================== */
+.social-links {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.social-link {
+  width: 50px;
+  height: 50px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--transition-normal);
+}
+
+.social-link svg {
+  width: 22px;
+  height: 22px;
+}
+
+.social-link:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: var(--glow-primary);
+  transform: translateY(-5px);
+}

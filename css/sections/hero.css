@@ -1,0 +1,282 @@
+/* ========================================
+   Hero Section Styles
+   Homepage hero/banner section
+======================================== */
+
+/* ======================
+   Hero Container
+====================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 80px;
+  overflow: hidden;
+}
+
+/* ======================
+   Background Shapes
+====================== */
+.hero-bg-shapes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: pulse 6s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 181, 15, 0.15) 0%,
+    transparent 70%
+  );
+  top: -10%;
+  right: -10%;
+}
+
+.shape-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(15, 95, 255, 0.1) 0%,
+    transparent 70%
+  );
+  bottom: 10%;
+  left: 5%;
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 181, 15, 0.1) 0%,
+    transparent 70%
+  );
+  top: 40%;
+  right: 30%;
+  animation-delay: 4s;
+}
+
+/* ======================
+   Hero Grid Layout
+====================== */
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  z-index: 1;
+}
+
+/* ======================
+   Hero Badge
+====================== */
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 181, 15, 0.1);
+  color: var(--primary);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: 30px;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  margin-bottom: var(--spacing-lg);
+  border: 1px solid rgba(255, 181, 15, 0.2);
+}
+
+/* ======================
+   Hero Title
+====================== */
+.hero-title {
+  font-size: var(--font-size-6xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  background: linear-gradient(
+    135deg,
+    var(--text-primary) 0%,
+    var(--primary) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+/* ======================
+   Hero Subtitle
+====================== */
+.hero-subtitle {
+  font-size: var(--font-size-2xl);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  min-height: 50px;
+}
+
+/* Typing Effect Cursor */
+.typed-text::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+  color: var(--primary);
+}
+
+/* ======================
+   Hero Description
+====================== */
+.hero-description {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  line-height: 2;
+  margin-bottom: var(--spacing-xl);
+  max-width: 500px;
+}
+
+/* ======================
+   Hero CTA Buttons
+====================== */
+.hero-cta {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* ======================
+   Trust Signals
+====================== */
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--border-color);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.trust-icon {
+  font-size: var(--font-size-lg);
+}
+
+.trust-text {
+  font-weight: 500;
+}
+
+.trust-number {
+  display: block;
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.trust-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.trust-divider {
+  width: 1px;
+  background: var(--border-color);
+}
+
+/* ======================
+   Hero Image
+====================== */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Image Glow Effect */
+.image-glow {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--primary),
+    var(--secondary),
+    var(--primary)
+  );
+  opacity: 0.3;
+  filter: blur(30px);
+  z-index: 1;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+/* ======================
+   Scroll Indicator
+====================== */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  animation: slideDown 2s ease-in-out infinite;
+}
+
+.mouse {
+  width: 26px;
+  height: 40px;
+  border: 2px solid var(--primary);
+  border-radius: 15px;
+  position: relative;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: slideDown 2s ease-in-out infinite;
+}

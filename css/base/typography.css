@@ -1,0 +1,53 @@
+/* ========================================
+   Typography Styles
+   Headings, text, and content formatting
+======================================== */
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Section Badge */
+.section-badge {
+  display: inline-block;
+  background: rgba(255, 181, 15, 0.1);
+  color: var(--primary);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: 30px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  border: 1px solid rgba(255, 181, 15, 0.2);
+}
+
+/* Section Title */
+.section-title {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-md);
+}
+
+.section-title.text-right {
+  text-align: right;
+}
+
+/* Section Subtitle */
+.section-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Highlight Text */
+.highlight {
+  color: var(--primary);
+  text-shadow: 0 0 30px rgba(255, 181, 15, 0.3);
+}

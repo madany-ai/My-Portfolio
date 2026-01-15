@@ -1,0 +1,55 @@
+/* ========================================
+   Mohamed Madany Portfolio
+   Main CSS Entry Point
+   
+   This file imports all modular CSS files
+   following separation of concerns.
+======================================== */
+
+/* ======================
+   Base Styles
+   Foundation and design tokens
+====================== */
+@import 'base/variables.css';
+@import 'base/reset.css';
+@import 'base/typography.css';
+@import 'base/animations.css';
+
+/* ======================
+   Components
+   Reusable UI components
+====================== */
+@import 'components/buttons.css';
+@import 'components/cards.css';
+@import 'components/forms.css';
+
+/* ======================
+   Layout
+   Structural elements
+====================== */
+@import 'layout/navigation.css';
+@import 'layout/footer.css';
+
+/* ======================
+   Sections
+   Page-specific sections
+====================== */
+@import 'sections/hero.css';
+@import 'sections/about.css';
+@import 'sections/services.css';
+@import 'sections/skills.css';
+@import 'sections/projects.css';
+@import 'sections/testimonials.css';
+@import 'sections/contact.css';
+
+/* ======================
+   Themes
+   Theme variations
+====================== */
+@import 'themes/light.css';
+
+/* ======================
+   Responsive
+   Media queries (loaded last)
+====================== */
+@import 'responsive/responsive.css';

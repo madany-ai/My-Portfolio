@@ -1,0 +1,88 @@
+/* ========================================
+   CSS Design Tokens (Variables)
+   All design system values in one place
+======================================== */
+:root {
+  /* ======================
+     Colors 
+  ====================== */
+  --primary: #ffb50f;
+  --primary-dark: #e6a00d;
+  --secondary: #0f5fff;
+  --secondary-dark: #0d4fcc;
+  --accent: #ff0628;
+  
+  /* Background Colors */
+  --bg-dark: #000000;
+  --bg-darker: #050505;
+  --bg-card: #0a0a0a;
+  --bg-card-hover: #111111;
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-muted: #666666;
+  
+  /* Border Colors */
+  --border-color: #1a1a1a;
+  --border-light: #2a2a2a;
+  
+  /* Status Colors */
+  --color-success: #27c93f;
+  --color-error: #ff4757;
+  --color-warning: #ffb50f;
+
+  /* ======================
+     Glow Effects 
+  ====================== */
+  --glow-primary: 0 0 30px rgba(255, 181, 15, 0.25);
+  --glow-primary-strong: 0 0 50px rgba(255, 181, 15, 0.4);
+  --glow-primary-intense: 0 0 80px rgba(255, 181, 15, 0.5);
+  --glow-secondary: 0 0 30px rgba(15, 95, 255, 0.25);
+  --glow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+  /* ======================
+     Typography 
+  ====================== */
+  --font-family: "IBM Plex Sans Arabic", system-ui, -apple-system, sans-serif;
+  
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3.5rem;
+  --font-size-6xl: 4.5rem;
+
+  /* ======================
+     Spacing 
+  ====================== */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  --spacing-4xl: 6rem;
+
+  /* ======================
+     Layout 
+  ====================== */
+  --container-max: 1200px;
+  --border-radius: 12px;
+  --border-radius-lg: 20px;
+  --border-radius-xl: 30px;
+
+  /* ======================
+     Transitions 
+  ====================== */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}

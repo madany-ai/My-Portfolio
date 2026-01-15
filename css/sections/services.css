@@ -1,0 +1,30 @@
+/* ========================================
+   Services Section Styles
+   Services grid and why-me section
+======================================== */
+
+/* ======================
+   Why Me Section
+====================== */
+.why-me {
+  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-xl);
+}
+
+/* ======================
+   Services Section
+====================== */
+.services {
+  background: linear-gradient(180deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-xl);
+}

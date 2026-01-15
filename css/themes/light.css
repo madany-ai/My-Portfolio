@@ -1,0 +1,122 @@
+/* ========================================
+   Light Theme Overrides
+   All light mode specific styles
+======================================== */
+
+/* ======================
+   Theme Variables Override
+====================== */
+[data-theme="light"] {
+  --bg-dark: #f8f9fa;
+  --bg-darker: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f0f0f0;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+  --text-muted: #888888;
+  --border-color: #e0e0e0;
+  --border-light: #d0d0d0;
+  --glow-primary: 0 0 30px rgba(255, 181, 15, 0.3);
+  --glow-primary-strong: 0 0 50px rgba(255, 181, 15, 0.5);
+  --glow-secondary: 0 0 30px rgba(15, 95, 255, 0.3);
+  --glow-card: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ======================
+   Navigation
+====================== */
+[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .navbar.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .logo {
+  color: #1a1a1a;
+}
+
+[data-theme="light"] .nav-links a {
+  color: #444444;
+}
+
+[data-theme="light"] .nav-links a:hover,
+[data-theme="light"] .nav-links a.active {
+  color: var(--primary-dark);
+}
+
+[data-theme="light"] .theme-toggle {
+  background: #f0f0f0;
+  border-color: #e0e0e0;
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  background: #e5e5e5;
+}
+
+[data-theme="light"] .menu-toggle span {
+  background: #1a1a1a;
+}
+
+/* ======================
+   Hero
+====================== */
+[data-theme="light"] .hero-title {
+  background: linear-gradient(135deg, #1a1a1a 0%, var(--primary-dark) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* ======================
+   Cards & Components
+====================== */
+[data-theme="light"] .code-block,
+[data-theme="light"] .skill-category,
+[data-theme="light"] .service-card,
+[data-theme="light"] .project-card,
+[data-theme="light"] .testimonial-card,
+[data-theme="light"] .contact-form,
+[data-theme="light"] .timeline-content {
+  background: #ffffff;
+  border-color: #e0e0e0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .floating-card {
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .skill-tag {
+  background: rgba(255, 181, 15, 0.15);
+  border-color: rgba(255, 181, 15, 0.3);
+}
+
+/* ======================
+   Forms
+====================== */
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group textarea,
+[data-theme="light"] .form-group select {
+  background: #f8f9fa;
+  border-color: #e0e0e0;
+  color: #1a1a1a;
+}
+
+[data-theme="light"] .form-group input:focus,
+[data-theme="light"] .form-group textarea:focus,
+[data-theme="light"] .form-group select:focus {
+  background: #ffffff;
+}
+
+/* ======================
+   Footer
+====================== */
+[data-theme="light"] .footer {
+  background: #ffffff;
+  border-top: 1px solid #e0e0e0;
+}
