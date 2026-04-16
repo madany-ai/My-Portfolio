@@ -23,22 +23,16 @@ function initLangToggle() {
     if (!langToggle) return;
 
     const html = document.documentElement;
-    // Always start in Arabic
-    html.setAttribute('data-lang', 'ar');
-    html.setAttribute('lang', 'ar');
-    html.setAttribute('dir', 'rtl');
-
-    langToggle.addEventListener('click', () => {
-        const currentLang = html.getAttribute('data-lang');
-        const newLang = currentLang === 'ar' ? 'en' : 'ar';
-
-        html.setAttribute('data-lang', newLang);
-        html.setAttribute('lang', newLang);
-        html.setAttribute('dir', newLang === 'ar' ? 'rtl' : 'ltr');
+    
+    // Function to apply language
+    function setLanguage(lang) {
+        html.setAttribute('data-lang', lang);
+        html.setAttribute('lang', lang);
+        html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
 
         // Swap all translatable elements
         document.querySelectorAll('[data-ar][data-en]').forEach(el => {
-            const content = el.getAttribute(`data-${newLang}`);
+            const content = el.getAttribute(`data-${lang}`);
             // If content contains HTML tags, use innerHTML
             if (content.includes('<') && content.includes('>')) {
                 el.innerHTML = content;
@@ -50,7 +44,7 @@ function initLangToggle() {
         // Update toggle button labels
         const labelAr = langToggle.querySelector('.lang-ar');
         const labelEn = langToggle.querySelector('.lang-en');
-        if (newLang === 'en') {
+        if (lang === 'en') {
             labelAr.style.display = 'none';
             labelEn.style.display = 'inline';
         } else {
@@ -59,12 +53,29 @@ function initLangToggle() {
         }
 
         // Update page title
-        document.title = newLang === 'en'
+        document.title = lang === 'en'
             ? 'AI Automation Consultant & Implementer | Mohamed Madany'
             : 'مستشار ومطور أتمتة الأعمال بالذكاء الاصطناعي | محمد مدني';
 
         // Update typing words based on language
-        updateTypingWords(newLang);
+        updateTypingWords(lang);
+        
+        // Save preference
+        localStorage.setItem('preferred-lang', lang);
+    }
+
+    // Detect browser language or saved preference
+    const savedLang = localStorage.getItem('preferred-lang');
+    const browserLang = navigator.language || navigator.userLanguage;
+    const defaultLang = savedLang || (browserLang.startsWith('en') ? 'en' : 'ar');
+
+    // Initialize with detected language
+    setLanguage(defaultLang);
+
+    langToggle.addEventListener('click', () => {
+        const currentLang = html.getAttribute('data-lang');
+        const newLang = currentLang === 'ar' ? 'en' : 'ar';
+        setLanguage(newLang);
     });
 }
 
