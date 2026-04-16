@@ -36,10 +36,11 @@
 ====================== */
 @import 'sections/hero.css';
 @import 'sections/about.css';
+@import 'sections/process.css';
 @import 'sections/services.css';
 @import 'sections/skills.css';
+@import 'sections/faq.css';
 @import 'sections/projects.css';
-@import 'sections/testimonials.css';
 @import 'sections/contact.css';
 
 /* Site is permanently dark — no light theme */
