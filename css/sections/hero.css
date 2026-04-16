@@ -126,7 +126,9 @@
   font-weight: 500;
   color: #dddddd;
   margin-bottom: var(--spacing-lg);
-  min-height: 50px;
+  min-height: 3.5em; /* Reserve enough space for wrapping typing text */
+  display: flex;
+  align-items: center;
 }
 
 /* Typing Effect Cursor */
@@ -215,7 +217,8 @@
 .image-container {
   position: relative;
   width: 400px;
-  height: 400px;
+  max-width: 100%;
+  aspect-ratio: 1/1;
   transform-style: preserve-3d;
   animation: floatAvatar 8s ease-in-out infinite alternate;
 }

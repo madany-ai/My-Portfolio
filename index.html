@@ -92,32 +92,13 @@
       fetchpriority="high"
     />
 
-    <!-- Preload Critical Local Fonts -->
-    <link
-      rel="preload"
-      as="font"
-      type="font/ttf"
-      href="fonts/DG%20Tebian%20Regular.ttf"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      as="font"
-      type="font/ttf"
-      href="fonts/DG%20Tebian%20Bold.ttf"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      as="font"
-      type="font/ttf"
-      href="fonts/DG%20Tebian%20Black.ttf"
-      crossorigin="anonymous"
-    />
-
+    <!-- Preload Critical Assets -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    </noscript>
 
     <!-- Critical CSS - Inline for instant render -->
     <style>
@@ -285,6 +266,7 @@
         color: var(--text-secondary);
         margin-bottom: 1.5rem;
         line-height: 1.7;
+        min-height: 3.4em; /* Reserve space for typing effect lines */
       }
       .hero-description {
         font-size: 1.125rem;
@@ -429,8 +411,8 @@
           <h2 class="hero-subtitle animate-fade-up delay-2" data-ar="أبني لك أنظمة رقمية تتكفل بمهامك اليدوية" data-en="I build automated systems that handle your repetitive tasks">
             أبني لك أنظمة رقمية تتكفل بمهامك اليدوية <span class="highlight typed-text"></span>
           </h2>
-          <p class="hero-description animate-fade-up delay-3" data-ar="نوفر لشركتك أكثر من 15 ساعات أسبوعياً عبر ربط الأنظمة وتصميم سير عمل ذكي، لتتفرغ للتوسع والمبيعات بدون زيادة في التكاليف." data-en="Save your business 15+ hours per week by connecting your tools and designing smart workflows — so you can focus on growth without adding overhead.">
-            نوفر لشركتك أكثر من <strong>15 ساعات أسبوعياً</strong> عبر ربط الأنظمة وتصميم سير عمل ذكي، لتتفرغ للتوسع والمبيعات بدون زيادة في التكاليف.
+          <p class="hero-description animate-fade-up delay-3" data-ar="نوفر لشركتك 24/7 ساعة عبر ربط الأنظمة وتصميم سير عمل ذكي، لتتفرغ للتوسع والمبيعات بدون زيادة في التكاليف." data-en="Save your business 20+ hours per week by connecting your tools and designing smart workflows  so you can focus on growth without adding overhead.">
+            نوفر لشركتك أكثر من <strong>20 ساعات أسبوعياً</strong> عبر ربط الأنظمة وتصميم سير عمل ذكي، لتتفرغ للتوسع والمبيعات بدون زيادة في التكاليف.
           </p>
           <div class="hero-cta animate-fade-up delay-4">
             <a href="https://calendly.com/mohamedgamalmadany/30min" target="_blank" class="btn btn-primary btn-lg">
@@ -484,7 +466,7 @@
             
             <div class="floating-card card-2 animate-float delay-1">
               <span class="card-icon">⚙️</span>
-              <span class="card-text" data-ar="توفير 15+ ساعات" data-en="Save 15+ Hours/Week">توفير 15+ ساعات</span>
+              <span class="card-text" data-ar="توفير 20+ ساعات" data-en="Save 20+ Hours/Week">توفير 20+ ساعات</span>
             </div>
             <div class="floating-card card-1 animate-float delay-2">
               <span class="card-icon">🤖</span>
@@ -571,8 +553,8 @@
           <div class="about-text">
             <span class="section-badge animate-fade-up" data-ar="👋 خبير أتمتة" data-en="👋 Automation Expert">👋 خبير أتمتة</span>
 
-            <p class="animate-fade-up delay-2" data-ar="تهدر الشركات الصغيرة أكثر من 15 ساعة أسبوعياً على مهام يدوية. هنا أتدخل لتحويل هذه المهام إلى أنظمة مؤتمتة تعمل على مدار الساعة." data-en="Small businesses waste over 15 hours weekly on manual tasks. I help transform these into systems that work around the clock.">
-              تهدر الشركات الصغيرة أكثر من 15 ساعة أسبوعياً على مهام يدوية. 
+            <p class="animate-fade-up delay-2" data-ar="تهدر الشركات الصغيرة أكثر من 20 ساعة أسبوعياً على مهام يدوية. هنا أتدخل لتحويل هذه المهام إلى أنظمة مؤتمتة تعمل على مدار الساعة." data-en="Small businesses waste over 24/7 on manual tasks. I help transform these into systems that work around the clock.">
+              تهدر الشركات الصغيرة أكثر من 20 ساعة أسبوعياً على مهام يدوية. 
               هنا أتدخل لتحويل هذه المهام إلى أنظمة مؤتمتة تعمل على مدار الساعة.
             </p>
             <p class="animate-fade-up delay-3" data-ar="منهجيتي: تحليل ← تصميم سير العمل ← التنفيذ والربط ← التدريب." data-en="My Process: Analysis ← Workflow Design ← Implementation ← Integration ← Training.">
@@ -587,8 +569,8 @@
               </div>
               <div class="feature">
                 <span class="feature-icon">✓</span>
-                <span data-ar="توفير الوقت: يوفر عملائي في المتوسط 15 ساعة أسبوعياً في الشهر الأول." data-en="Time Saving: Clients save avg 15 hours/week in the first month.">
-                  <strong>توفير الوقت:</strong> يوفر عملائي في المتوسط 15 ساعة أسبوعياً خلال الشهر الأول من التطبيق.
+                <span data-ar="توفير الوقت: يوفر عملائي في المتوسط 20 ساعة أسبوعياً في الشهر الأول." data-en="Time Saving: Clients save avg 15 hours/week in the first month.">
+                  <strong>توفير الوقت:</strong> يوفر عملائي في المتوسط 20 ساعة أسبوعياً خلال الشهر الأول من التطبيق.
                 </span>
               </div>
               <div class="feature">
