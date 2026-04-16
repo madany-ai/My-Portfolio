@@ -42,11 +42,7 @@
 @import 'sections/testimonials.css';
 @import 'sections/contact.css';
 
-/* ======================
-   Themes
-   Theme variations
-====================== */
-@import 'themes/light.css';
+/* Site is permanently dark — no light theme */
 
 /* ======================
    Responsive

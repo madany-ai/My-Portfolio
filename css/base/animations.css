@@ -147,15 +147,15 @@
 
 /* Fade Animations - Visible States */
 .animate-fade-up.visible {
-  animation: fadeUp 0.8s ease forwards;
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-fade-left.visible {
-  animation: fadeLeft 0.8s ease forwards;
+  animation: fadeLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-fade-right.visible {
-  animation: fadeRight 0.8s ease forwards;
+  animation: fadeRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Float Animation */

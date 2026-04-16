@@ -23,52 +23,47 @@
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  z-index: 0;
 }
 
 .shape {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.5;
-  animation: pulse 6s ease-in-out infinite;
+  filter: blur(120px);
+  opacity: 0.6;
+  animation: floatBG 15s ease-in-out infinite alternate;
+  mix-blend-mode: screen;
 }
 
 .shape-1 {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 181, 15, 0.15) 0%,
-    transparent 70%
-  );
-  top: -10%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(255, 181, 15, 0.15) 0%, transparent 70%);
+  top: -20%;
   right: -10%;
 }
 
 .shape-2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(
-    circle,
-    rgba(15, 95, 255, 0.1) 0%,
-    transparent 70%
-  );
-  bottom: 10%;
-  left: 5%;
-  animation-delay: 2s;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(15, 95, 255, 0.15) 0%, transparent 70%);
+  bottom: 0%;
+  left: -5%;
+  animation-delay: -5s;
 }
 
 .shape-3 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 181, 15, 0.1) 0%,
-    transparent 70%
-  );
-  top: 40%;
-  right: 30%;
-  animation-delay: 4s;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 6, 40, 0.1) 0%, transparent 70%);
+  top: 30%;
+  right: 40%;
+  animation-delay: -10s;
+}
+
+@keyframes floatBG {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-50px) scale(1.1); }
 }
 
 /* ======================
@@ -80,10 +75,13 @@
   gap: var(--spacing-3xl);
   align-items: center;
   overflow: hidden;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content {
-  z-index: 1;
+  z-index: 2;
+  perspective: 1000px;
 }
 
 /* ======================
@@ -110,7 +108,8 @@
   margin-bottom: var(--spacing-sm);
   background: linear-gradient(
     135deg,
-    var(--text-primary) 0%,
+    #ffffff 0%,
+    #dddddd 40%,
     var(--primary) 100%
   );
   -webkit-background-clip: text;
@@ -125,7 +124,7 @@
 .hero-subtitle {
   font-size: var(--font-size-2xl);
   font-weight: 500;
-  color: var(--text-secondary);
+  color: #dddddd;
   margin-bottom: var(--spacing-lg);
   min-height: 50px;
 }
@@ -153,7 +152,6 @@
 ====================== */
 .hero-cta {
   display: flex;
-  gap: var(--spacing-md);
   flex-wrap: wrap;
   margin-bottom: var(--spacing-2xl);
 }
@@ -164,9 +162,8 @@
 .hero-trust {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-lg);
   padding-top: var(--spacing-xl);
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--glass-border);
 }
 
 .trust-item {
@@ -179,6 +176,7 @@
 
 .trust-icon {
   font-size: var(--font-size-lg);
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
 }
 
 .trust-text {
@@ -190,6 +188,7 @@
   font-size: var(--font-size-2xl);
   font-weight: 700;
   color: var(--primary);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .trust-label {
@@ -199,7 +198,7 @@
 
 .trust-divider {
   width: 1px;
-  background: var(--border-color);
+  background: var(--glass-border);
 }
 
 /* ======================
@@ -210,12 +209,20 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  perspective: 1000px;
 }
 
 .image-container {
   position: relative;
   width: 400px;
   height: 400px;
+  transform-style: preserve-3d;
+  animation: floatAvatar 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatAvatar {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-15px); }
 }
 
 .profile-img {
@@ -225,6 +232,7 @@
   border-radius: 50%;
   position: relative;
   z-index: 2;
+  box-shadow: var(--shadow-3d-layered);
 }
 
 /* Image Glow Effect */
@@ -235,13 +243,20 @@
   background: conic-gradient(
     from 0deg,
     var(--primary),
+    transparent,
     var(--secondary),
+    transparent,
     var(--primary)
   );
-  opacity: 0.3;
-  filter: blur(30px);
+  opacity: 0.5;
+  filter: blur(40px);
   z-index: 1;
-  animation: pulse 4s ease-in-out infinite;
+  animation: spinGlow 10s linear infinite;
+  transform: translateZ(10px);
+}
+
+@keyframes spinGlow {
+  100% { transform: translateZ(10px) rotate(360deg); }
 }
 
 /* ======================

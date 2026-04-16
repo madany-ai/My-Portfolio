@@ -5,7 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize all modules
-    initThemeToggle();
+    initLangToggle();
     initNavigation();
     initScrollAnimations();
     initSkillBars();
@@ -16,21 +16,55 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Theme Toggle (Dark/Light Mode)
+ * Language Toggle (Arabic / English)
  */
-function initThemeToggle() {
-    const themeToggle = document.getElementById('themeToggle');
-    
-    // Default to dark mode
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
+function initLangToggle() {
+    const langToggle = document.getElementById('langToggle');
+    if (!langToggle) return;
+
+    const html = document.documentElement;
+    // Always start in Arabic
+    html.setAttribute('data-lang', 'ar');
+    html.setAttribute('lang', 'ar');
+    html.setAttribute('dir', 'rtl');
+
+    langToggle.addEventListener('click', () => {
+        const currentLang = html.getAttribute('data-lang');
+        const newLang = currentLang === 'ar' ? 'en' : 'ar';
+
+        html.setAttribute('data-lang', newLang);
+        html.setAttribute('lang', newLang);
+        html.setAttribute('dir', newLang === 'ar' ? 'rtl' : 'ltr');
+
+        // Swap all translatable elements
+        document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+            const content = el.getAttribute(`data-${newLang}`);
+            // If content contains HTML tags, use innerHTML
+            if (content.includes('<') && content.includes('>')) {
+                el.innerHTML = content;
+            } else {
+                el.textContent = content;
+            }
+        });
+
+        // Update toggle button labels
+        const labelAr = langToggle.querySelector('.lang-ar');
+        const labelEn = langToggle.querySelector('.lang-en');
+        if (newLang === 'en') {
+            labelAr.style.display = 'none';
+            labelEn.style.display = 'inline';
+        } else {
+            labelAr.style.display = 'inline';
+            labelEn.style.display = 'none';
+        }
+
+        // Update page title
+        document.title = newLang === 'en'
+            ? 'AI Automation Consultant & Implementer | Mohamed Madany'
+            : 'مستشار ومطور أتمتة الأعمال بالذكاء الاصطناعي | محمد مدني';
+
+        // Update typing words based on language
+        updateTypingWords(newLang);
     });
 }
 
@@ -217,28 +251,29 @@ function initSmoothScroll() {
     });
 }
 
-/**
- * Typing Effect for Hero
- */
+let currentTypingLang = 'ar';
+const typingWords = {
+    ar: ['نظام يوفّر 15+ ساعة', 'ميزة تنافسية حقيقية', 'حل رقمي يعمل 24/7'],
+    en: ['saves you 15+ hrs/week', 'works while you sleep', 'scales without hiring']
+};
+
+function updateTypingWords(lang) {
+    currentTypingLang = lang;
+}
+
 function initTypingEffect() {
     const typedElement = document.querySelector('.typed-text');
     if (!typedElement) return;
-    
-    const words = [
-        'حل رقمي متكامل',
-        'متجر يُحقق مبيعات',
-        'نظام يوفّر وقتك',
-        'ميزة تنافسية حقيقية'
-    ];
-    
+
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
     let typeSpeed = 100;
-    
+
     function type() {
-        const currentWord = words[wordIndex];
-        
+        const words = typingWords[currentTypingLang];
+        const currentWord = words[wordIndex % words.length];
+
         if (isDeleting) {
             typedElement.textContent = currentWord.substring(0, charIndex - 1);
             charIndex--;
@@ -248,20 +283,19 @@ function initTypingEffect() {
             charIndex++;
             typeSpeed = 100;
         }
-        
+
         if (!isDeleting && charIndex === currentWord.length) {
-            typeSpeed = 2000; // Pause at end
+            typeSpeed = 2000;
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             wordIndex = (wordIndex + 1) % words.length;
-            typeSpeed = 500; // Pause before next word
+            typeSpeed = 500;
         }
-        
+
         setTimeout(type, typeSpeed);
     }
-    
-    // Start typing after a delay
+
     setTimeout(type, 1000);
 }
 

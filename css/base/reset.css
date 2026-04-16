@@ -25,13 +25,20 @@ body {
   background-color: var(--bg-dark);
   color: var(--text-primary);
   line-height: 1.8;
-  direction: rtl;
-  text-align: right;
+  text-align: start;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color var(--transition-normal),
     color var(--transition-normal);
+}
+
+[dir="ltr"] {
+  --font-family: var(--font-en);
+}
+
+[dir="rtl"] {
+  --font-family: var(--font-ar);
 }
 
 /* Links */

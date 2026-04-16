@@ -1,37 +1,33 @@
 /* ========================================
    Typography Styles
-   Headings, text, and content formatting
+   Using Alexandria (Arabic) + Inter (Latin)
 ======================================== */
 
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: var(--spacing-md);
-}
+/* ====================================
+   Section Components
+==================================== */
 
 /* Section Badge */
 .section-badge {
   display: inline-block;
-  background: rgba(255, 181, 15, 0.1);
+  background: rgba(255, 181, 15, 0.08);
   color: var(--primary);
-  padding: var(--spacing-sm) var(--spacing-lg);
+  padding: 0.35rem var(--spacing-lg);
   border-radius: 30px;
   font-size: var(--font-size-sm);
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: var(--spacing-md);
-  border: 1px solid rgba(255, 181, 15, 0.2);
+  border: 1px solid rgba(255, 181, 15, 0.18);
+  letter-spacing: 0.02em;
 }
 
 /* Section Title */
 .section-title {
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
   margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .section-title.text-right {
@@ -40,14 +36,14 @@ h6 {
 
 /* Section Subtitle */
 .section-subtitle {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   color: var(--text-secondary);
-  max-width: 600px;
+  max-width: 580px;
   margin: 0 auto;
+  line-height: 1.8;
 }
 
 /* Highlight Text */
 .highlight {
   color: var(--primary);
-  text-shadow: 0 0 30px rgba(255, 181, 15, 0.3);
 }

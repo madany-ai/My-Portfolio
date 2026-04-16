@@ -8,15 +8,15 @@
   --secondary: #0f5fff;
   --secondary-dark: #0d4fcc;
   --accent: #ff0628;
-  --bg-dark: #000000;
-  --bg-darker: #050505;
-  --bg-card: #0a0a0a;
-  --bg-card-hover: #111111;
+  --bg-dark: #0d0d0d;
+  --bg-darker: #080808;
+  --bg-card: #141414;
+  --bg-card-hover: #1c1c1c;
   --text-primary: #ffffff;
   --text-secondary: #b0b0b0;
   --text-muted: #666666;
-  --border-color: #1a1a1a;
-  --border-light: #2a2a2a;
+  --border-color: #252525;
+  --border-light: #333333;
 
   /* Glow Effects */
   --glow-primary: 0 0 30px rgba(255, 181, 15, 0.25);
@@ -25,18 +25,21 @@
   --glow-secondary: 0 0 30px rgba(15, 95, 255, 0.25);
   --glow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
 
-  /* Typography - with system font fallback to prevent CLS */
-  --font-family: "IBM Plex Sans Arabic", system-ui, -apple-system, sans-serif;
+  /* Typography */
+  --font-family: "Alexandria", "Inter", system-ui, -apple-system, sans-serif;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
   --font-size-xl: 1.25rem;
   --font-size-2xl: 1.5rem;
-  --font-size-3xl: 2rem;
-  --font-size-4xl: 2.5rem;
-  --font-size-5xl: 3.5rem;
-  --font-size-6xl: 4.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 2.75rem;
+  --font-size-6xl: 3.5rem;
+  --line-height-tight: 1.2;
+  --line-height-base: 1.6;
+  --line-height-loose: 1.9;
 
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -186,14 +189,12 @@ body {
   font-family: var(--font-family);
   background-color: var(--bg-dark);
   color: var(--text-primary);
-  line-height: 1.8;
-  direction: rtl;
-  text-align: right;
+  line-height: var(--line-height-loose);
+  text-align: start;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color var(--transition-normal),
-    color var(--transition-normal);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
 a {
@@ -399,15 +400,11 @@ select {
 /* ========================================
    Typography
 ======================================== */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  line-height: 1.4;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: var(--line-height-tight);
   margin-bottom: var(--spacing-md);
+  letter-spacing: -0.01em;
 }
 
 .section-header {
@@ -745,26 +742,29 @@ h6 {
 }
 
 .hero-title {
-  font-size: var(--font-size-6xl);
+  font-size: var(--font-size-5xl);
   font-weight: 700;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
   background: linear-gradient(
     135deg,
-    var(--text-primary) 0%,
+    #ffffff 0%,
+    #e8e8e8 50%,
     var(--primary) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  line-height: 1.2;
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
-  font-size: var(--font-size-2xl);
-  font-weight: 500;
+  font-size: var(--font-size-xl);
+  font-weight: 400;
   color: var(--text-secondary);
   margin-bottom: var(--spacing-lg);
-  min-height: 50px;
+  min-height: 40px;
+  line-height: var(--line-height-base);
 }
 
 .typed-text::after {
@@ -952,14 +952,14 @@ h6 {
 .why-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
 }
 
 .why-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-lg);
-  padding: var(--spacing-2xl);
+  padding: var(--spacing-xl);
   text-align: center;
   transition: all var(--transition-normal);
   position: relative;
@@ -989,20 +989,21 @@ h6 {
 }
 
 .why-icon {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-lg);
+  font-size: 2.25rem;
+  margin-bottom: var(--spacing-md);
   display: block;
 }
 
 .why-card h3 {
-  font-size: var(--font-size-xl);
-  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
 }
 
 .why-card p {
   color: var(--text-secondary);
-  font-size: var(--font-size-base);
-  line-height: 1.8;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-loose);
 }
 
 /* ========================================
@@ -1098,7 +1099,7 @@ h6 {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-xl);
 }
 
@@ -1106,8 +1107,8 @@ h6 {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-lg);
-  padding: var(--spacing-2xl);
-  text-align: center;
+  padding: var(--spacing-xl);
+  text-align: right;
   transition: all var(--transition-normal);
   position: relative;
 }
@@ -1137,14 +1138,18 @@ h6 {
 }
 
 .service-icon {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-lg);
+  font-size: 2.25rem;
+  margin-bottom: var(--spacing-md);
   display: block;
+  text-align: center;
 }
 
 .service-card h3 {
   font-size: var(--font-size-lg);
-  margin-bottom: var(--spacing-lg);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  line-height: var(--line-height-tight);
+  text-align: right;
 }
 
 .service-features {

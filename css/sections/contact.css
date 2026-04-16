@@ -84,6 +84,8 @@
 .social-links {
   display: flex;
   gap: var(--spacing-md);
+  justify-content: center;
+  margin-top: 4rem;
 }
 
 .social-link {
@@ -110,3 +112,98 @@
   box-shadow: var(--glow-primary);
   transform: translateY(-5px);
 }
+
+/* ======================
+   Qualification Section
+====================== */
+.qualification-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 4rem auto 3rem;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.qualification-box {
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.qualification-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  opacity: 0.6;
+}
+
+.qualification-box.good-fit::before {
+  background: linear-gradient(90deg, #22c55e, #10b981);
+}
+
+.qualification-box.bad-fit::before {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+  opacity: 0.3;
+}
+
+.qualification-box:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-hover);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.qualification-box h4 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.qualification-box.good-fit h4 {
+  color: #22c55e;
+}
+
+.qualification-box.bad-fit h4 {
+  color: #f87171;
+}
+
+.qualification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.qualification-list li {
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  position: relative;
+  padding-inline-start: 1.8rem;
+}
+
+.booking-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .qualification-container {
+    grid-template-columns: 1fr;
+    margin-top: 2.5rem;
+  }
+  
+  .qualification-box {
+    padding: 2rem;
+  }
+}
+
