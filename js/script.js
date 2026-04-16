@@ -65,9 +65,11 @@ function initLangToggle() {
         localStorage.setItem('preferred-lang', lang);
     }
 
-    // Detect saved preference or default to English
+    // Detect saved preference → then browser/OS language → then fallback to English
     const savedLang = localStorage.getItem('preferred-lang');
-    const defaultLang = savedLang || 'en';
+    const browserLang = navigator.language || navigator.userLanguage || '';
+    const detectedLang = browserLang.toLowerCase().startsWith('ar') ? 'ar' : 'en';
+    const defaultLang = savedLang || detectedLang;
 
     // Initialize with detected language
     setLanguage(defaultLang);
