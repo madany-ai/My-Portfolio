@@ -1,39 +1,18 @@
 /* ========================================
    Mohamed Madany Portfolio
    Main CSS Entry Point
-   
-   This file imports all modular CSS files
-   following separation of concerns.
-======================================== */
+   ======================================== */
 
-/* ======================
-   Base Styles
-   Foundation and design tokens
-====================== */
+/* Grouping all imports at the top (CSS Best Practice) */
 @import 'base/variables.css';
 @import 'base/reset.css';
 @import 'base/typography.css';
 @import 'base/animations.css';
-
-/* ======================
-   Components
-   Reusable UI components
-====================== */
 @import 'components/buttons.css';
 @import 'components/cards.css';
 @import 'components/forms.css';
-
-/* ======================
-   Layout
-   Structural elements
-====================== */
 @import 'layout/navigation.css';
 @import 'layout/footer.css';
-
-/* ======================
-   Sections
-   Page-specific sections
-====================== */
 @import 'sections/hero.css';
 @import 'sections/about.css';
 @import 'sections/process.css';
@@ -42,6 +21,27 @@
 @import 'sections/faq.css';
 @import 'sections/projects.css';
 @import 'sections/contact.css';
+@import 'responsive/responsive.css';
+
+/* ======================
+   Base Styles
+   Foundation and design tokens
+====================== */
+
+/* ======================
+   Components
+   Reusable UI components
+====================== */
+
+/* ======================
+   Layout
+   Structural elements
+====================== */
+
+/* ======================
+   Sections
+   Page-specific sections
+====================== */
 
 /* Site is permanently dark — no light theme */
 
@@ -49,4 +49,3 @@
    Responsive
    Media queries (loaded last)
 ====================== */
-@import 'responsive/responsive.css';
