@@ -172,32 +172,38 @@ function initNavigation() {
  * Scroll Animations (Intersection Observer)
  */
 function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.animate-fade-up, .animate-fade-left, .animate-fade-right');
-    
+    const animatedElements = document.querySelectorAll('.animate-fade-up, .animate-fade-left, .animate-fade-right, .animate-fade-in');
+
+    // FAILSAFE: Force all elements visible after 2.5s regardless of JS/Observer state
+    const failsafeTimer = setTimeout(() => {
+        animatedElements.forEach(el => el.classList.add('visible'));
+    }, 2500);
+
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.15
+        rootMargin: '0px 0px -50px 0px', // Trigger 50px before element enters viewport
+        threshold: 0.05  // Only needs 5% in view to trigger (was 15%)
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Stop observing once visible
             }
         });
     }, observerOptions);
-    
+
     animatedElements.forEach(element => {
         observer.observe(element);
     });
-    
-    // Trigger hero animations immediately
+
+    // Trigger hero animations immediately on load
     setTimeout(() => {
-        document.querySelectorAll('.hero .animate-fade-up, .hero .animate-fade-left').forEach(el => {
+        document.querySelectorAll('.hero .animate-fade-up, .hero .animate-fade-left, .hero .animate-fade-right').forEach(el => {
             el.classList.add('visible');
         });
-    }, 100);
+    }, 50);
 }
 
 /**
