@@ -328,14 +328,8 @@
       }
     </style>
 
-    <!-- Main Styles - Deferred loading -->
-    <link
-      rel="preload"
-      href="css/main.css?v=1.0.2"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript><link rel="stylesheet" href="css/main.css" /></noscript>
+    <!-- Main Styles - Direct load to prevent black screen on slow devices -->
+    <link rel="stylesheet" href="css/main.css?v=1.0.3" />
 
     <!-- Structured Data - LocalBusiness + Person -->
     <script type="application/ld+json">
