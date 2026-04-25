@@ -151,7 +151,7 @@
   border: 1px solid var(--glass-border);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-2xl);
-  text-align: center;
+  text-align: start;
   transition: all var(--transition-bounce);
   position: relative;
   box-shadow: var(--shadow-3d-layered);
@@ -201,7 +201,7 @@
 }
 
 .service-features {
-  text-align: right;
+  text-align: start;
   margin-bottom: var(--spacing-lg);
 }
 
@@ -221,7 +221,7 @@
   font-size: var(--font-size-sm);
   margin-bottom: var(--spacing-md);
   line-height: 1.7;
-  text-align: right;
+  text-align: start;
 }
 
 .service-cta {
@@ -244,9 +244,9 @@
   border-radius: var(--border-radius);
   font-size: var(--font-size-sm);
   color: var(--text-secondary);
-  text-align: right;
+  text-align: start;
   line-height: 1.7;
-  border-right: 3px solid var(--primary);
+  border-inline-start: 3px solid var(--primary);
   box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);
 }
 
