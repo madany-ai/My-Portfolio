@@ -1,11 +1,8 @@
 /* ========================================
-   Hero Section Styles
-   Homepage hero/banner section
+   Hero Section — Perspective Design
+   Spatial depth, isometric grid, emerald palette
 ======================================== */
 
-/* ======================
-   Hero Container
-====================== */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -16,7 +13,7 @@
 }
 
 /* ======================
-   Background Shapes
+   Isometric Grid Background
 ====================== */
 .hero-bg-shapes {
   position: absolute;
@@ -26,44 +23,76 @@
   z-index: 0;
 }
 
+/* ISO Grid Overlay — perspective tilted */
+.hero-bg-shapes::before {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  background-image:
+    linear-gradient(rgba(0, 189, 125, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 189, 125, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+  transform: perspective(900px) rotateX(42deg) rotateZ(-18deg) scale(2.2);
+  animation: gridPulse 8s ease-in-out infinite;
+}
+
+/* Vanishing point vertical accent */
+.hero-bg-shapes::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  height: 55%;
+  background: linear-gradient(to top, rgba(0, 189, 125, 0.14), transparent);
+  transform: translateX(-50%);
+  filter: blur(1px);
+}
+
+/* Emerald orbs */
 .shape {
   position: absolute;
   border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.6;
-  animation: floatBG 15s ease-in-out infinite alternate;
+  filter: blur(100px);
+  opacity: 0.65;
+  animation: floatBG 14s ease-in-out infinite alternate;
   mix-blend-mode: screen;
 }
 
 .shape-1 {
-  width: 700px;
-  height: 700px;
+  width: 650px;
+  height: 650px;
   background: radial-gradient(circle, rgba(255, 181, 15, 0.15) 0%, transparent 70%);
-  top: -20%;
-  right: -10%;
+  top: -15%;
+  right: -8%;
 }
 
 .shape-2 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(15, 95, 255, 0.15) 0%, transparent 70%);
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(15, 95, 255, 0.1) 0%, transparent 70%);
   bottom: 0%;
-  left: -5%;
+  left: -4%;
   animation-delay: -5s;
 }
 
 .shape-3 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(255, 6, 40, 0.1) 0%, transparent 70%);
-  top: 30%;
-  right: 40%;
-  animation-delay: -10s;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(255, 181, 15, 0.08) 0%, transparent 70%);
+  top: 38%;
+  right: 32%;
+  animation-delay: -9s;
 }
 
 @keyframes floatBG {
-  0% { transform: translateY(0) scale(1); }
-  100% { transform: translateY(-50px) scale(1.1); }
+  0%   { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-40px) scale(1.08); }
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
 }
 
 /* ======================
@@ -81,7 +110,7 @@
 
 .hero-content {
   z-index: 2;
-  perspective: 1000px;
+  perspective: var(--perspective);
 }
 
 /* ======================
@@ -97,38 +126,45 @@
   font-weight: 500;
   margin-bottom: var(--spacing-lg);
   border: 1px solid rgba(255, 181, 15, 0.2);
+  font-family: var(--font-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 /* ======================
-   Hero Title
+   Hero Title — Oswald Display Font
 ====================== */
 .hero-title {
+  font-family: var(--font-display);
   font-size: var(--font-size-6xl);
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
   background: linear-gradient(
     135deg,
-    #ffffff 0%,
-    #dddddd 40%,
+    var(--text-primary) 0%,
+    #a7f3d0 50%,
     var(--primary) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 
 /* ======================
    Hero Subtitle
 ====================== */
 .hero-subtitle {
-  font-size: var(--font-size-2xl);
-  font-weight: 500;
-  color: #dddddd;
+  font-size: var(--font-size-xl);
+  font-weight: 400;
+  color: var(--text-secondary);
   margin-bottom: var(--spacing-lg);
-  min-height: 3.5em; /* Reserve enough space for wrapping typing text */
+  min-height: 3.5em;
   display: flex;
   align-items: center;
+  line-height: var(--line-height-base);
 }
 
 /* Typing Effect Cursor */
@@ -155,6 +191,7 @@
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
+  gap: var(--spacing-md);
   margin-bottom: var(--spacing-2xl);
 }
 
@@ -165,7 +202,8 @@
   display: flex;
   flex-wrap: wrap;
   padding-top: var(--spacing-xl);
-  border-top: 1px solid var(--glass-border);
+  border-top: 1px solid var(--border-color);
+  gap: var(--spacing-lg);
 }
 
 .trust-item {
@@ -178,19 +216,18 @@
 
 .trust-icon {
   font-size: var(--font-size-lg);
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 0 8px rgba(0, 189, 125, 0.4));
 }
 
-.trust-text {
-  font-weight: 500;
-}
+.trust-text    { font-weight: 500; }
 
 .trust-number {
   display: block;
+  font-family: var(--font-display);
   font-size: var(--font-size-2xl);
   font-weight: 700;
   color: var(--primary);
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 0 20px rgba(0, 189, 125, 0.3);
 }
 
 .trust-label {
@@ -200,18 +237,18 @@
 
 .trust-divider {
   width: 1px;
-  background: var(--glass-border);
+  background: var(--border-color);
 }
 
 /* ======================
-   Hero Image
+   Hero Image — Perspective Frame
 ====================== */
 .hero-image {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  perspective: 1000px;
+  perspective: var(--perspective);
 }
 
 .image-container {
@@ -220,29 +257,55 @@
   max-width: 100%;
   aspect-ratio: 1/1;
   transform-style: preserve-3d;
-  animation: floatAvatar 8s ease-in-out infinite alternate;
+  animation: floatAvatar 9s ease-in-out infinite alternate;
+}
+
+/* Perspective corner border */
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: -10px; left: -10px;
+  right: -10px; bottom: -10px;
+  border: 1px solid var(--border-accent);
+  border-radius: 22px;
+  z-index: 0;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Second depth layer */
+.image-container::after {
+  content: "";
+  position: absolute;
+  top: -20px; left: -20px;
+  right: -20px; bottom: -20px;
+  border: 1px solid rgba(0, 189, 125, 0.12);
+  border-radius: 28px;
+  z-index: 0;
+  pointer-events: none;
 }
 
 @keyframes floatAvatar {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(-15px); }
+  0%   { transform: translateY(0px) rotateY(-2deg); }
+  100% { transform: translateY(-14px) rotateY(2deg); }
 }
 
 .profile-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 18px;
   position: relative;
   z-index: 2;
-  box-shadow: var(--shadow-3d-layered);
+  border: 2px solid var(--border-accent);
+  box-shadow: var(--shadow-3d-layered), var(--glow-depth);
 }
 
-/* Image Glow Effect */
+/* Conic emerald glow ring */
 .image-glow {
   position: absolute;
-  inset: -20px;
-  border-radius: 50%;
+  inset: -18px;
+  border-radius: 26px;
   background: conic-gradient(
     from 0deg,
     var(--primary),
@@ -251,16 +314,47 @@
     transparent,
     var(--primary)
   );
-  opacity: 0.5;
-  filter: blur(40px);
+  opacity: 0.35;
+  filter: blur(35px);
   z-index: 1;
   animation: spinGlow 10s linear infinite;
-  transform: translateZ(10px);
 }
 
 @keyframes spinGlow {
-  100% { transform: translateZ(10px) rotate(360deg); }
+  100% { transform: rotate(360deg); }
 }
+
+/* ======================
+   Floating Cards
+====================== */
+.floating-card {
+  position: absolute;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  box-shadow: var(--glow-card);
+  z-index: 3;
+  backdrop-filter: blur(12px);
+  animation: float 5s ease-in-out infinite;
+}
+
+.floating-card .card-icon { font-size: var(--font-size-lg); }
+.floating-card .card-text {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+}
+
+.card-1 { top: 10%; right: -20%; }
+.card-2 { bottom: 20%; left: -25%; animation-delay: 1s; }
+.card-3 { bottom: 5%; right: -15%; animation-delay: 2s; }
 
 /* ======================
    Scroll Indicator
@@ -280,20 +374,21 @@
 }
 
 .mouse {
-  width: 26px;
-  height: 40px;
+  width: 24px;
+  height: 38px;
   border: 2px solid var(--primary);
-  border-radius: 15px;
+  border-radius: 12px;
   position: relative;
+  box-shadow: var(--glow-primary);
 }
 
 .wheel {
   width: 4px;
-  height: 8px;
+  height: 7px;
   background: var(--primary);
   border-radius: 2px;
   position: absolute;
-  top: 8px;
+  top: 7px;
   left: 50%;
   transform: translateX(-50%);
   animation: slideDown 2s ease-in-out infinite;

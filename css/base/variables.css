@@ -1,71 +1,91 @@
 /* ========================================
-   CSS Design Tokens (Variables)
-   All design system values in one place
+   CSS Design Tokens — Perspective Design System
+   Based on SKILL.md: spatial depth, isometric views
+   Brand color: #FFB50F (unchanged)
 ======================================== */
 :root {
   /* ======================
-     Colors 
+     Brand Colors — UNCHANGED
   ====================== */
   --primary: #ffb50f;
   --primary-dark: #d6980d;
+  --primary-light: #ffc940;
   --secondary: #0f5fff;
   --secondary-dark: #0940b3;
   --accent: #ff0628;
-  
-  /* Background Colors */
+  --success: #16A34A;
+  --warning: #D97706;
+  --danger: #DC2626;
+
+  /* Dark Surface Tokens */
+  --surface: #0d0d0d;
   --bg-dark: #0d0d0d;
   --bg-darker: #080808;
   --bg-surface: #141414;
   --bg-card: #141414;
   --bg-card-hover: #1c1c1c;
-  
-  /* Glassmorphism Variables */
+
+  /* Glassmorphism */
   --glass-bg: rgba(25, 25, 25, 0.6);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-border-light: rgba(255, 255, 255, 0.15);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
   --glass-blur: blur(12px);
 
-  /* Text Colors */
+  /* Text Tokens */
   --text-primary: #ffffff;
   --text-secondary: #9a9a9a;
   --text-muted: #555555;
   --text-heading: #ffb50f;
-  
-  /* Border Colors */
+  --text-inverse: #111827;
+
+  /* Border */
   --border-color: #252525;
   --border-light: #333333;
-  
+  --border-accent: rgba(255, 181, 15, 0.3);
+
   /* Status Colors */
   --color-success: #27c93f;
   --color-error: #ff4757;
   --color-warning: #ffb50f;
 
   /* ======================
-     Glow Effects 
+     Glow Effects — Yellow Brand
   ====================== */
   --glow-primary: 0 0 30px rgba(255, 181, 15, 0.2);
   --glow-primary-strong: 0 0 50px rgba(255, 181, 15, 0.35);
   --glow-primary-intense: 0 0 80px rgba(255, 181, 15, 0.5);
   --glow-secondary: 0 0 30px rgba(15, 95, 255, 0.2);
   --glow-card: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --glow-depth: 0 20px 60px rgba(0, 0, 0, 0.7), 0 4px 20px rgba(255, 181, 15, 0.1);
 
   /* ======================
-     Shadow & Effects 
+     Perspective Depth Tokens
   ====================== */
-  --shadow-3d-layered: 0 4px 20px rgba(0,0,0,0.4);
+  --perspective: 1000px;
+  --iso-angle: rotateX(20deg) rotateY(-10deg);
+  --vanish-skew: perspective(1200px) rotateX(5deg);
+  --transition-depth: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+
+  /* ======================
+     Shadow & Effects
+  ====================== */
+  --shadow-3d-layered: 0 4px 20px rgba(0,0,0,0.5);
   --shadow-inner-glow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
   --shadow-btn-3d: 0 4px 15px rgba(255, 181, 15, 0.2);
   --shadow-btn-3d-active: 0 2px 5px rgba(255, 181, 15, 0.1);
 
   /* ======================
-     Typography 
+     Typography — Perspective Design Fonts
   ====================== */
-  --font-ar: "Alexandria", system-ui, sans-serif;
-  --font-en: "Inter", system-ui, sans-serif;
-  --font-family: var(--font-ar);
-  
-  /* Font Sizes — Compact SaaS scale */
+  --font-primary: "Poppins", system-ui, sans-serif;
+  --font-display: "Oswald", "Poppins", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-ar: "Poppins", system-ui, sans-serif;
+  --font-en: "Poppins", system-ui, sans-serif;
+  --font-family: var(--font-primary);
+
+  /* Type Scale: 12/14/16/20/24/32 */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -82,7 +102,7 @@
   --line-height-loose: 1.9;
 
   /* ======================
-     Spacing 
+     Spacing Scale: 4/8/12/16/24/32
   ====================== */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -94,7 +114,7 @@
   --spacing-4xl: 6rem;
 
   /* ======================
-     Layout 
+     Layout
   ====================== */
   --container-max: 1200px;
   --border-radius: 12px;
@@ -102,10 +122,10 @@
   --border-radius-xl: 30px;
 
   /* ======================
-     Transitions 
+     Transitions
   ====================== */
   --transition-fast: 0.15s ease-out;
-  --transition-normal: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth ease out */
-  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1); /* Very smooth ease out */
-  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); /* Smooth spring bounce */
+  --transition-normal: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }

@@ -14,10 +14,10 @@
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-    <!-- SEO Meta Tags - Optimized for AI Automation Consulting -->
+    <!-- SEO Meta Tags - Optimized for AI Automation  Engineer -->
     <meta
       name="description"
-      content="I help businesses eliminate repetitive manual work by building custom AI automation systems using n8n, Make.com and OpenAI — so your team can focus on what truly matters."
+      content="I help businesses eliminate repetitive manual work by building custom AI automation systems using n8n, Make.com and OpenAI  so your team can focus on what truly matters."
     />
     <meta
       name="keywords"
@@ -42,11 +42,11 @@
     <meta property="og:url" content="https://mohamed-madany.netlify.app" />
     <meta
       property="og:title"
-      content="Mohamed Madany — AI Automation Specialist & Builder"
+      content="Mohamed Madany  AI Automation Specialist & Builder"
     />
     <meta
       property="og:description"
-      content="I build automated workflows with n8n, Make.com & AI that save your team 20+ hours per week — no code needed on your end."
+      content="I build automated workflows with n8n, Make.com & AI that save your team 20+ hours per week  no code needed on your end."
     />
     <meta
       property="og:image"
@@ -57,7 +57,7 @@
     <meta property="og:locale" content="ar_EG" />
     <meta property="og:locale:alternate" content="ar_SA" />
     <meta property="og:locale:alternate" content="ar_AE" />
-    <meta property="og:site_name" content="Mohamed Madany — AI Automation" />
+    <meta property="og:site_name" content="Mohamed Madany  AI Automation" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -65,7 +65,7 @@
     <meta name="twitter:creator" content="@mohamedmadany" />
     <meta
       name="twitter:title"
-      content="Mohamed Madany — AI Automation Specialist & Builder"
+      content="Mohamed Madany  AI Automation Specialist & Builder"
     />
     <meta
       name="twitter:description"
@@ -77,7 +77,7 @@
     />
 
     <!-- SEO Optimized Title -->
-    <title>Mohamed Madany — AI Automation Specialist & Builder</title>
+    <title>AI Automation Engineer | Save 20+ Hours/Week | Mohamed Madany</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="images/profile.webp" />
@@ -95,9 +95,9 @@
     <!-- Preload Critical Assets -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     </noscript>
 
     <!-- Critical CSS - Inline for instant render -->
@@ -108,21 +108,14 @@
         --bg-dark: #0d0d0d;
         --bg-card: #141414;
         --text-primary: #ffffff;
-        --text-secondary: #b0b0b0;
+        --text-secondary: #9a9a9a;
         --border-color: #252525;
-        --font-family: "Alexandria", "Inter", system-ui, sans-serif;
+        --font-primary: "Poppins", system-ui, sans-serif;
+        --font-display: "Oswald", "Poppins", sans-serif;
+        --font-family: var(--font-primary);
       }
-      *,
-      ::before,
-      ::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-        font-size: 16px;
-      }
+      *, ::before, ::after { margin:0; padding:0; box-sizing:border-box; }
+      html { scroll-behavior:smooth; font-size:16px; }
       body {
         font-family: var(--font-family);
         background-color: var(--bg-dark);
@@ -130,201 +123,83 @@
         line-height: 1.8;
         -webkit-font-smoothing: antialiased;
       }
-      .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-      }
+      .container { width:100%; max-width:1200px; margin:0 auto; padding:0 1.5rem; }
       .navbar {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1000;
-        padding: 1rem 0;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--border-color);
+        position:fixed; top:0; right:0; left:0; z-index:1000;
+        padding:1rem 0;
+        background:rgba(10,15,13,0.85);
+        backdrop-filter:blur(24px);
+        -webkit-backdrop-filter:blur(24px);
+        border-bottom:1px solid #252525;
       }
-      .nav-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .logo {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: var(--text-primary);
-        text-decoration: none;
-      }
-      .logo span {
-        color: var(--primary);
-      }
-      .nav-links {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-      }
-      .nav-links a {
-        color: var(--text-secondary);
-        font-size: 0.875rem;
-        font-weight: 500;
-        text-decoration: none;
-      }
-      .nav-actions {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
+      .nav-container { display:flex; align-items:center; justify-content:space-between; }
+      .logo { font-family:var(--font-display); font-size:1.25rem; font-weight:700; color:var(--text-primary); text-decoration:none; letter-spacing:0.04em; text-transform:uppercase; }
+      .logo span { color:var(--primary); }
+      .nav-links { display:flex; gap:2rem; list-style:none; }
+      .nav-links a { color:var(--text-secondary); font-size:0.875rem; font-weight:500; text-decoration:none; }
+      .nav-actions { display:flex; align-items:center; gap:1rem; }
       .lang-toggle {
-        height: 36px;
-        padding: 0 1rem;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(255,255,255,0.05);
-        border: 1px solid var(--border-color);
-        color: var(--text-primary);
-        font-size: 0.8rem;
-        font-weight: 600;
-        cursor: pointer;
-        letter-spacing: 0.03em;
+        height:36px; padding:0 1rem; border-radius:20px;
+        display:flex; align-items:center; justify-content:center;
+        background:rgba(255,255,255,0.05);
+        border:1px solid #252525;
+        color:var(--text-primary); font-size:0.8rem; font-weight:600; cursor:pointer;
+        letter-spacing:0.04em;
       }
-      .menu-toggle {
-        display: none;
-      }
+      .menu-toggle { display:none; }
       .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem 2rem;
-        font-size: 1rem;
-        font-weight: 600;
-        border-radius: 12px;
-        cursor: pointer;
-        text-decoration: none;
+        display:inline-flex; align-items:center; justify-content:center;
+        padding:1rem 2rem; font-size:1rem; font-weight:600;
+        border-radius:8px; cursor:pointer; text-decoration:none;
+        font-family:var(--font-primary);
+        letter-spacing:0.02em;
       }
       .btn-primary {
-        background: linear-gradient(
-          135deg,
-          var(--primary),
-          var(--primary-dark)
-        );
-        color: #000;
-        box-shadow: 0 0 30px rgba(255, 181, 15, 0.25);
-        border: none;
+        background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+        color:#000;
+        box-shadow:0 0 30px rgba(255,181,15,0.25);
+        border:none;
       }
-      .btn-nav {
-        padding: 0.5rem 1.5rem;
-        font-size: 0.875rem;
-      }
+      .btn-nav { padding:0.5rem 1.5rem; font-size:0.875rem; }
       .hero {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        position: relative;
-        padding-top: 80px;
+        min-height:100vh; display:flex; align-items:center;
+        position:relative; padding-top:80px;
       }
       .hero-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
+        display:grid; grid-template-columns:1fr 1fr;
+        gap:4rem; align-items:center;
       }
       .hero-badge {
-        display: inline-block;
-        background: rgba(255, 181, 15, 0.1);
-        color: var(--primary);
-        padding: 0.5rem 1.5rem;
-        border-radius: 30px;
-        font-size: 0.875rem;
-        margin-bottom: 1.5rem;
-        border: 1px solid rgba(255, 181, 15, 0.2);
+        display:inline-block;
+        background:rgba(255,181,15,0.1);
+        color:var(--primary);
+        padding:0.5rem 1.5rem; border-radius:30px;
+        font-size:0.875rem; margin-bottom:1.5rem;
+        border:1px solid rgba(255,181,15,0.2);
+        font-family:var(--font-display);
+        letter-spacing:0.06em; text-transform:uppercase;
       }
       .hero-title {
-        font-size: 2.75rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        background: linear-gradient(
-          135deg,
-          #ffffff 0%,
-          #e8e8e8 50%,
-          var(--primary) 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        line-height: 1.2;
-        letter-spacing: -0.02em;
+        font-family:var(--font-display);
+        font-size:2.75rem; font-weight:700; margin-bottom:1rem;
+        background:linear-gradient(135deg,#ffffff 0%,#e8e8e8 50%,#ffb50f 100%);
+        -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        line-height:1.2; letter-spacing:-0.02em; text-transform:uppercase;
       }
-      .hero-subtitle {
-        font-size: 1.1rem;
-        font-weight: 400;
-        color: var(--text-secondary);
-        margin-bottom: 1.5rem;
-        line-height: 1.7;
-        min-height: 3.4em; /* Reserve space for typing effect lines */
-      }
-      .hero-description {
-        font-size: 1.125rem;
-        color: var(--text-secondary);
-        line-height: 2;
-        margin-bottom: 2rem;
-        max-width: 500px;
-      }
-      .hero-cta {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-      .hero-image {
-        position: relative;
-      }
-      .image-container {
-        position: relative;
-      }
-      .profile-img {
-        width: 100%;
-        max-width: 400px;
-        height: auto;
-        border-radius: 20px;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-      }
-      @media (max-width: 768px) {
-        .hero-container {
-          grid-template-columns: 1fr;
-          text-align: center;
-        }
-        .hero-title {
-          font-size: 2rem;
-        }
-        .hero-subtitle {
-          font-size: 1rem;
-        }
-        .nav-links {
-          display: none;
-        }
-        .menu-toggle {
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
-          padding: 10px;
-          background: none;
-          border: none;
-          cursor: pointer;
-        }
-        .menu-toggle span {
-          width: 24px;
-          height: 2px;
-          background: var(--text-primary);
-        }
-        .btn-nav {
-          display: none;
-        }
+      .hero-subtitle { font-size:1.1rem; font-weight:400; color:var(--text-secondary); margin-bottom:1.5rem; line-height:1.7; min-height:3.4em; }
+      .hero-description { font-size:1.125rem; color:var(--text-secondary); line-height:2; margin-bottom:2rem; max-width:500px; }
+      .hero-cta { display:flex; gap:1rem; flex-wrap:wrap; }
+      .hero-image { position:relative; }
+      .image-container { position:relative; }
+      .profile-img { width:100%; max-width:400px; height:auto; border-radius:16px; aspect-ratio:1/1; object-fit:cover; border:2px solid rgba(255,181,15,0.3); }
+      @media (max-width:768px) {
+        .hero-container { grid-template-columns:1fr; text-align:center; }
+        .hero-title { font-size:2rem; }
+        .hero-subtitle { font-size:1rem; }
+        .nav-links { display:none; }
+        .menu-toggle { display:flex; flex-direction:column; gap:5px; padding:10px; background:none; border:none; cursor:pointer; }
+        .menu-toggle span { width:24px; height:2px; background:var(--text-primary); }
+        .btn-nav { display:none; }
       }
     </style>
 
@@ -402,8 +277,8 @@
         <div class="hero-content">
           <span class="hero-badge animate-fade-up">AI Automation Specialist & Builder</span>
           <h1 class="hero-title animate-fade-up delay-1" data-ar="ضاعف الإنتاجية بالأتمتة والذكاء الاصطناعي" data-en="Multiply Your Team's Output with AI Automation">ضاعف الإنتاجية بالأتمتة والذكاء الاصطناعي</h1>
-          <h2 class="hero-subtitle animate-fade-up delay-2" data-ar="أبني لك أنظمة رقمية تتكفل بمهامك اليدوية" data-en="I build automated systems that handle your repetitive tasks">
-            أبني لك أنظمة رقمية تتكفل بمهامك اليدوية <span class="highlight typed-text"></span>
+          <h2 class="hero-subtitle animate-fade-up delay-2">
+            <span data-ar=" أبني لك أنظمة رقمية تتكفل بمهامك اليدوية " data-en="I build automated systems that handle your repetitive tasks ">أبني لك أنظمة رقمية تتكفل بمهامك اليدوية</span> <span class="highlight typed-text"></span>
           </h2>
           <p class="hero-description animate-fade-up delay-3" data-ar="نوفر لشركتك 24/7 ساعة عبر ربط الأنظمة وتصميم سير عمل ذكي، لتتفرغ للتوسع والمبيعات بدون زيادة في التكاليف." data-en="Save your business 20+ hours per week by connecting your tools and designing smart workflows  so you can focus on growth without adding overhead.">
             نوفر لشركتك أكثر من <strong>20 ساعات أسبوعياً</strong> عبر ربط الأنظمة وتصميم سير عمل ذكي، لتتفرغ للتوسع والمبيعات بدون زيادة في التكاليف.
@@ -547,17 +422,17 @@
           <div class="about-text">
             <span class="section-badge animate-fade-up" data-ar="👋 متخصص في الأتمتة" data-en="👋 Automation Specialist">👋 متخصص في الأتمتة</span>
 
-            <p class="animate-fade-up delay-2" data-ar="أنا محمد، متخصص في أتمتة الأعمال باستخدام الذكاء الاصطناعي وأدوات الربط الحديثة. أساعد الشركات على تحويل مهامها اليدوية المتكررة إلى أنظمة ذكية تعمل تلقائياً — فتتفرغ أنت وفريقك للأعمال التي تصنع فرقاً حقيقياً." data-en="I'm Mohamed, an AI Automation Specialist who helps businesses transform repetitive manual tasks into smart automated systems — freeing you and your team to focus on work that truly matters.">
+            <p class="animate-fade-up delay-2" data-ar="أنا محمد، متخصص في أتمتة الأعمال باستخدام الذكاء الاصطناعي وأدوات الربط الحديثة. أساعد الشركات على تحويل مهامها اليدوية المتكررة إلى أنظمة ذكية تعمل تلقائياً  فتتفرغ أنت وفريقك للأعمال التي تصنع فرقاً حقيقياً." data-en="I'm Mohamed, an AI Automation Specialist who helps businesses transform repetitive manual tasks into smart automated systems  freeing you and your team to focus on work that truly matters.">
               أنا محمد، متخصص في أتمتة الأعمال باستخدام الذكاء الاصطناعي وأدوات الربط الحديثة.
               أساعد الشركات على تحويل مهامها اليدوية المتكررة إلى أنظمة ذكية تعمل تلقائياً.
             </p>
-            <p class="animate-fade-up delay-3" data-ar="تخصصي الأساسي هو بناء سير عمل مخصصة باستخدام n8n وMake.com وOpenAI API، مع التركيز على حل مشاكل تجارية حقيقية لا مجرد أتمتة عشوائية." data-en="My core focus is building custom workflows using n8n, Make.com, and OpenAI API — targeting real business pain points, not just automating for the sake of it.">
+            <p class="animate-fade-up delay-3" data-ar="تخصصي الأساسي هو بناء سير عمل مخصصة باستخدام n8n وMake.com وOpenAI API، مع التركيز على حل مشاكل تجارية حقيقية لا مجرد أتمتة عشوائية." data-en="My core focus is building custom workflows using n8n, Make.com, and OpenAI API  targeting real business pain points, not just automating for the sake of it.">
               تخصصي الأساسي: بناء سير عمل مخصصة بـ <strong>n8n وMake.com وOpenAI</strong>، مع التركيز على حل مشاكل تجارية حقيقية لا مجرد أتمتة عشوائية.
             </p>
             <div class="about-features animate-fade-up delay-4">
               <div class="feature">
                 <span class="feature-icon">✓</span>
-                <span data-ar="نهج مخصص: كل حل أبنيه مصمم خصيصاً لاحتياجاتك، لا قوالب جاهزة." data-en="Tailored Approach: Every solution I build is custom-designed for your specific needs — no one-size-fits-all templates.">
+                <span data-ar="نهج مخصص: كل حل أبنيه مصمم خصيصاً لاحتياجاتك، لا قوالب جاهزة." data-en="Tailored Approach: Every solution I build is custom-designed for your specific needs  no one-size-fits-all templates.">
                   <strong>نهج مخصص:</strong> كل حل أبنيه مصمم خصيصاً لاحتياجاتك، لا قوالب جاهزة.
                 </span>
               </div>
@@ -569,8 +444,8 @@
               </div>
               <div class="feature">
                 <span class="feature-icon">✓</span>
-                <span data-ar="شفافية كاملة: أوضح لك بالضبط ما ستحصل عليه وكيف يعمل النظام." data-en="Full Transparency: I explain exactly what you're getting and how the system works — no black boxes.">
-                  <strong>شفافية كاملة:</strong> أوضح لك بالضبط ما ستحصل عليه وكيف يعمل النظام — بدون تعقيدات.
+                <span data-ar="شفافية كاملة: أوضح لك بالضبط ما ستحصل عليه وكيف يعمل النظام." data-en="Full Transparency: I explain exactly what you're getting and how the system works  no black boxes.">
+                  <strong>شفافية كاملة:</strong> أوضح لك بالضبط ما ستحصل عليه وكيف يعمل النظام  بدون تعقيدات.
                 </span>
               </div>
             </div>
@@ -736,7 +611,7 @@
             <div class="skill-tags">
               <span class="skill-tag">n8n</span>
               <span class="skill-tag">Make.com</span>
-              <span class="skill-tag">Zapier</span>
+              <span class="skill-tag">Coding</span>
             </div>
           </div>
           <div class="skill-category animate-fade-up delay-2">
@@ -821,8 +696,8 @@
           <h2 class="section-title animate-fade-up delay-1">
             <span data-ar="مشاكل شائعة" data-en="Common business problems">مشاكل شائعة</span> <span class="highlight" data-ar="وكيف أحلها بالأتمتة" data-en="& how I solve them with automation">وكيف أحلها بالأتمتة</span>
           </h2>
-          <p class="section-subtitle animate-fade-up delay-2" data-ar="هذه نماذج توضيحية لحالات واقعية شائعة في الأعمال — إذا كان عملك يعاني من إحدى هذه المشاكل، يمكنني بناء الحل المناسب." data-en="These are illustrative blueprints for real-world business scenarios. If your business faces similar challenges, I can build the right solution for you.">
-            هذه نماذج توضيحية لحالات واقعية شائعة — إذا كان عملك يعاني من إحدى هذه المشاكل، يمكنني بناء الحل المناسب
+          <p class="section-subtitle animate-fade-up delay-2" data-ar="هذه نماذج توضيحية لحالات واقعية شائعة في الأعمال  إذا كان عملك يعاني من إحدى هذه المشاكل، يمكنني بناء الحل المناسب." data-en="These are illustrative blueprints for real-world business scenarios. If your business faces similar challenges, I can build the right solution for you.">
+            هذه نماذج توضيحية لحالات واقعية شائعة  إذا كان عملك يعاني من إحدى هذه المشاكل، يمكنني بناء الحل المناسب
           </p>
         </div>
         <div class="projects-grid">
@@ -981,7 +856,7 @@
         <div class="footer-content">
           <div class="footer-brand">
             <a href="#hero" class="logo" data-ar="محمد <span>مدني</span>" data-en="Madany<span>.AI</span>">محمد <span>مدني</span></a>
-            <p data-ar="مستشار أتمتة الأعمال بالذكاء الاصطناعي" data-en="AI Automation Consultant & Implementer">مستشار أتمتة الأعمال بالذكاء الاصطناعي</p>
+            <p data-ar="مستشار أتمتة الأعمال بالذكاء الاصطناعي" data-en="AI Automation Specialist">مستشار أتمتة الأعمال بالذكاء الاصطناعي</p>
           </div>
           <div class="footer-links">
             <a href="#services" data-ar="الخدمات" data-en="Services">الخدمات</a>

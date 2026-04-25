@@ -34,6 +34,13 @@ function initLangToggle() {
         // Swap all translatable elements
         document.querySelectorAll('[data-ar][data-en]').forEach(el => {
             const content = el.getAttribute(`data-${lang}`);
+            if (!content) return;
+
+            // Check if this element has child elements that are also translatable
+            // If so, skip it — children will be handled individually
+            const hasTranslatableChildren = el.querySelector('[data-ar][data-en]');
+            if (hasTranslatableChildren) return;
+
             // If content contains HTML tags, use innerHTML
             if (content.includes('<') && content.includes('>')) {
                 el.innerHTML = content;
@@ -55,8 +62,8 @@ function initLangToggle() {
 
         // Update page title
         document.title = lang === 'en'
-            ? 'AI Automation Consultant & Implementer | Mohamed Madany'
-            : 'مستشار ومطور أتمتة الأعمال بالذكاء الاصطناعي | محمد مدني';
+            ? 'AI Automation Engineer | Save time & Effort | Mohamed Madany'
+            : 'مهندس أنظمة بالذكاء الاصطناعي | محمد مدني';
 
         // Update typing words based on language
         updateTypingWords(lang);
@@ -278,6 +285,9 @@ const typingWords = {
 
 function updateTypingWords(lang) {
     currentTypingLang = lang;
+    // Clear current typed text so it restarts in new language
+    const typedEl = document.querySelector('.typed-text');
+    if (typedEl) typedEl.textContent = '';
 }
 
 function initTypingEffect() {
