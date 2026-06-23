@@ -78,10 +78,10 @@
   /* ======================
      Typography — Perspective Design Fonts
   ====================== */
-  --font-primary: "Poppins", system-ui, sans-serif;
-  --font-display: "Oswald", "Poppins", sans-serif;
+  --font-primary: "Cairo", "Poppins", system-ui, sans-serif;
+  --font-display: "Cairo", "Oswald", "Poppins", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  --font-ar: "Poppins", system-ui, sans-serif;
+  --font-ar: "Cairo", system-ui, sans-serif;
   --font-en: "Poppins", system-ui, sans-serif;
   --font-family: var(--font-primary);
 
