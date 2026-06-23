@@ -32,6 +32,13 @@ An end-to-end AI Agent connected to real-time menu data, a RAG knowledge base fo
 - Improves customer experience with instant, accurate responses
 - Centralizes all customer & order data in one place
 
+**Video Link**
+
+https://youtu.be/CKGJTuB90hY
+
+**Embeding Video**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CKGJTuB90hY?si=TrhJlVeVZqajwVR9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ---
 
 ## 02 · BookyIN — AI-Powered Bookstore Sales & Lead Generation Assistant
@@ -70,6 +77,13 @@ Customer → Website Chat Widget → AI Agent → Product APIs
 - Creates a scalable, zero-touch customer acquisition pipeline
 - Reduces manual support work entirely
 
+**Video Link**
+
+https://youtu.be/mReiUHoouCg
+
+**Embeding Video**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mReiUHoouCg?si=x1lcZyyQK8Aa_KZ3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
 
 ## 03 · AI SDR & Sales Automation Platform
@@ -100,6 +114,15 @@ An AI-powered SDR platform that handles prospect research, generates tailored em
 - Ensures zero leads fall through the cracks
 - Scales outbound efforts without scaling headcount
 
+**Video Link**
+
+https://youtu.be/7WQ91SdPmzk
+https://youtu.be/ccnMCRKQ7_c
+
+**Embeding Video**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7WQ91SdPmzk?si=vd3o4nR1DO8r3Jta" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ccnMCRKQ7_c?si=xSLoPK0K2BDWKwIk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ---
 
 ## 04 · Enterprise RAG System — AI Knowledge Base & Customer Support Agent for Home Services Companies "TechnoHome"
@@ -139,6 +162,13 @@ Company Documents → AI Semantic Chunking → Metadata Enrichment
 - Answers complex operational questions instantly
 - Qualifies leads and supports service booking workflows
 
+**Video Link**
+
+https://youtu.be/zxAgNdlQ4jg
+
+**Embeding Video**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zxAgNdlQ4jg?si=QoMsO0FnU_03Tslf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ---
 
 ## 05 · WhatsApp AI Agent Using EvolutionAPI — Appointment Setting & Customer Support
@@ -170,6 +200,14 @@ An intelligent AI agent deployed on WhatsApp that engages customers in natural c
 - Operates on the channel customers already prefer
 - Scales customer support without scaling headcount
 
+**Video Link**
+
+https://youtu.be/U_SzGpGQdeI
+
+**Embeding Video**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/U_SzGpGQdeI?si=WJpsum6WVGqfbSyP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
 
 ## 06 · AI-Powered Lead Generation & Personalized Email Outreach System
@@ -193,6 +231,14 @@ An automated system that identifies qualified leads, enriches their profiles usi
 - Personalizes outreach without manual effort
 - Keeps follow-up sequences running in the background
 
+**Video Link**
+
+https://youtu.be/BURxhv2BQcQ
+
+**Embeding Video**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BURxhv2BQcQ?si=cpzSGM7y48rXSFIj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
 
 ## 07 · AI Resume Analyzer
@@ -215,6 +261,15 @@ An AI-powered resume analysis tool that evaluates candidate resumes against job 
 - Cuts resume screening time from hours to seconds
 - Ensures consistent, unbiased evaluation criteria
 - Helps candidates improve their applications with clear feedback
+
+
+**Video Link**
+
+https://youtu.be/TQXmBMt0Fa8
+
+**Embeding Video**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TQXmBMt0Fa8?si=A4OhJZksW0Z7AQ0S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
@@ -268,6 +323,10 @@ landing-page-auditor/
 - Outputs client-ready reports with zero manual formatting
 - Supports Arabic-speaking markets with native-language findings
 
+
+**Embeding Post**
+
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7467182067739492353?compact=1" height="399" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
 ---
 
 ## 09 · AI-Powered Lead Capture & Booking Funnel for Home Services Businesses
@@ -315,6 +374,14 @@ A 6-step end-to-end AI lead machine that runs without human involvement from the
 - Delivers a full booked calendar without a manual sales process
 - Scales lead intake without scaling headcount
 - Works across all major home service verticals
+
+**Video Link**
+
+https://youtu.be/EDAJnDC4m5g
+
+**Embeding Video**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EDAJnDC4m5g?si=uUgqGqK67Mv5qNF_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 

@@ -619,3 +619,144 @@
 .project-image .project-link-icon {
   z-index: 2;
 }
+
+
+/* ======================
+   Project Modal Styles
+====================== */
+.clickable-card {
+  cursor: pointer;
+}
+.clickable-card:hover .project-overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+.clickable-card:hover .project-link-icon {
+  transform: scale(1.1);
+  background: var(--primary);
+  color: #000;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.modal-content {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  max-width: 900px;
+  width: 95%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 181, 15, 0.1);
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10001;
+}
+
+.modal.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px; /* Adjust for LTR/RTL if needed, usually we keep it fixed */
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s, transform 0.2s;
+}
+
+html[dir="rtl"] .modal-close {
+  right: auto;
+  left: 15px;
+}
+
+.modal-close:hover {
+  background: var(--primary);
+  color: #000;
+  transform: scale(1.1);
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+  background: #000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-body h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-heading);
+}
+
+.modal-body .project-category {
+  margin-bottom: 1rem;
+}
+
+.modal-cta {
+  padding: 0 2rem 2rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .modal-body {
+    padding: 1.5rem;
+  }
+  .modal-cta {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+}

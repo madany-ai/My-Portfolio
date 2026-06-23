@@ -728,3 +728,78 @@ function initFAQ() {
         });
     });
 }
+
+
+/**
+ * Project Modals
+ */
+function initProjectModals() {
+    const modal = document.getElementById('project-modal');
+    if (!modal) return;
+    
+    const modalOverlay = modal.querySelector('.modal-overlay');
+    const modalClose = modal.querySelector('.modal-close');
+    const modalIframe = document.getElementById('modal-iframe');
+    const modalBody = document.getElementById('modal-body');
+    const cards = document.querySelectorAll('.clickable-card');
+    
+    function openModal(card) {
+        const videoUrl = card.getAttribute('data-video');
+        const contentHtml = card.querySelector('.project-content').innerHTML;
+        
+        // Setup iframe
+        if (videoUrl) {
+            modalIframe.src = videoUrl;
+            modalIframe.style.display = 'block';
+        } else {
+            modalIframe.style.display = 'none';
+        }
+        
+        // Inject content
+        modalBody.innerHTML = contentHtml;
+        
+        // Re-apply language translations within modal
+        const currentLang = document.documentElement.getAttribute('data-lang') || 'ar';
+        modalBody.querySelectorAll('[data-ar][data-en]').forEach(el => {
+            const txt = el.getAttribute(`data-${currentLang}`);
+            if (txt) el.innerHTML = txt;
+        });
+        
+        // Show modal
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+    
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Stop video from playing
+        setTimeout(() => {
+            modalIframe.src = '';
+        }, 300); // Wait for transition
+    }
+    
+    cards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Prevent opening if they somehow clicked a direct link inside the card
+            if (e.target.tagName.toLowerCase() === 'a') return;
+            openModal(card);
+        });
+    });
+    
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
+    
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+}
+
+// Call initProjectModals on load
+document.addEventListener('DOMContentLoaded', () => {
+    initProjectModals();
+});
