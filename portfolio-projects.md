@@ -1,4 +1,4 @@
-# AI Automation Portfolio — Projects
+# AI Automation Portfolio — Projects - Mohamed Madany
 
 ---
 

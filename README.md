@@ -2,7 +2,7 @@
 
 Welcome to my portfolio repository! I'm an **AI Automation Specialist** focused on building custom, high-impact automated workflows that save businesses 50+ hours a week and scale their revenue.
 
-[🌍 View Live Portfolio](https://mohamed-madany.netlify.app/)
+[🌍 View Live Portfolio](https://madany-ai.github.io/My-Portfolio/)
 
 ## ⚡ What I Do
 I help businesses eliminate repetitive manual work by designing and implementing intelligent automation systems. My core focus isn't just writing code, but solving real operational bottlenecks using powerful tools like **n8n**, **Make.com**, and the **OpenAI API**.
@@ -30,7 +30,7 @@ My live portfolio showcases various case studies demonstrating real ROI, includi
 ## 🤝 Let's Work Together
 Are you looking to scale your business without scaling your headcount? Let's discuss how AI and Automation can transform your operations.
 
-- **Portfolio & Contact:** [Visit Website](https://mohamed-madany.netlify.app/)
+- **Portfolio & Contact:** [Visit Website](https://madany-ai.github.io/My-Portfolio/)
 - **LinkedIn:** [in/madanyai](https://www.linkedin.com/in/madanyai/)
 - **Calendly:** [Book a Discovery Call](https://calendly.com/mohamedgamalmadany/meeting)
 
